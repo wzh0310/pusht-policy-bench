@@ -1,0 +1,103 @@
+# ACT 训练配置（PushT 仿真，单卡）
+#
+# 用法：
+#   python -m lerobot.scripts.lerobot_train --config_path=./configs/act_pusht.yaml
+#
+# 命令行参数优先于本文件，临时覆盖示例：
+#   ... --config_path=./configs/act_pusht.yaml --steps=1000 --batch_size=8
+#
+# 字段来源：lerobot/configs/train.py · configs/default.py · policies/act/configuration_act.py
+
+# ----------------------------- 运行与产物 -----------------------------------
+output_dir: ./outputs/train/act_pusht   # 目录必须不存在，否则报 FileExistsError
+job_name: act_pusht
+seed: 1000                 # 同时影响权重初始化、数据打乱、评估环境
+resume: false
+
+# ----------------------------- 训练节奏 -------------------------------------
+steps: 20000               # PushT 上 ACT 通常 20k~50k 步才有可用成功率
+batch_size: 32             # 显存不足优先降这项
+num_workers: 8             # 视频解码是瓶颈，一般取 CPU 核数的 1/4~1/2
+prefetch_factor: 4
+persistent_workers: true
+
+log_freq: 200              # 日志打印间隔，0 关闭
+save_freq: 5000            # checkpoint 间隔，0 表示只存最后一个
+env_eval_freq: 5000        # 每隔多少步跑一次仿真评估，0 关闭可显著加速
+eval_steps: 0              # 用留出集算 loss，需 dataset.eval_split > 0
+max_eval_samples: 0        # 0 表示使用全部留出数据
+
+tf32: true                 # Ampere 及以上启用 TF32，小幅加速
+cudnn_deterministic: false # true 可复现，但慢 10~20%
+
+# ----------------------------- 数据集 ---------------------------------------
+dataset:
+  repo_id: lerobot/pusht
+  root: null                            # 填本地路径可跳过下载，例如 ./datasets/pusht
+  episodes: null                        # 例：[0, 1, 2] 只用几条做快速验证
+  exclude_episodes: null                # 例：[0, 5] 剔除异常轨迹
+  eval_split: 0.0                       # 例：0.05 留 5% episode 作验证集
+  use_imagenet_stats: true              # 图像用 ImageNet 均值方差归一化
+  video_backend: pyav                   # 解码异常时可尝试 torchcodec
+  revision: null
+  streaming: false                      # 超大才开；开启后不支持 eval_split
+
+  # 图像增广：默认关闭，小数据且视觉泛化差时再开
+  image_transforms:
+    enable: false
+    backend: dataloader                 # dataloader=CPU 增广；gpu=在训练卡上批量增广
+    max_num_transforms: 3
+    random_order: false
+
+# ----------------------------- 策略：ACT ------------------------------------
+policy:
+  type: act                             # 对应 configuration_act.py 的 register_subclass("act")
+  device: cuda
+  push_to_hub: false
+  # 从已有权重微调时启用下面两行，其余字段作为覆盖项生效
+  # path: lerobot/act_pusht
+  # pretrained_revision: main
+
+  # --- 动作分块：显存与响应速度的核心 ---
+  n_obs_steps: 1
+  chunk_size: 100                       # 一次预测未来多少步；显存大户，OOM 先降它
+  n_action_steps: 100                   # 每次实际执行多少步再重规划；调小更稳但更慢
+
+  # --- 网络结构 ---
+  vision_backbone: resnet18
+  dim_model: 512                        # 小数据可降到 256
+  n_heads: 8
+  dim_feedforward: 3200
+  n_encoder_layers: 4
+  n_decoder_layers: 1
+  dropout: 0.1
+
+  # --- 多模态建模（同一观测存在多种合理动作时需要）---
+  use_vae: true
+  latent_dim: 32
+  n_vae_encoder_layers: 4
+  kl_weight: 10.0                       # 过拟合调大，欠拟合调小
+
+  # --- 优化 ---
+  optimizer_lr: 1e-5                    # 最常调整的一项
+  optimizer_lr_backbone: 1e-5           # 主干常设为头部的 1/10
+  optimizer_weight_decay: 1e-4
+  use_amp: false                        # 显存较小时建议关闭，避免 NaN
+
+# ----------------------------- 评估环境 -------------------------------------
+env:
+  type: pusht
+  task: PushT-v0
+  fps: 10
+  episode_length: 300
+
+eval:
+  n_episodes: 10                        # 评估 episode 数量
+  batch_size: 0                        # 0 表示自动
+  use_async_envs: true
+  max_episode_steps: null
+
+# ----------------------------- 实验追踪 -------------------------------------
+trackio:
+  enable: false
+  project: lerobot

@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.env
+.venv/
+venv/
+
+# 可再生的数据与模型产物
+datasets/
+outputs/
+checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+wandb/
+runs/
+
+*.log
+MUJOCO_LOG.TXT
+*.tmp
+
+.vscode/
+.idea/
+.DS_Store

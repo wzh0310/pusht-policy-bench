@@ -1,0 +1,23 @@
+# BC 超参数 v2：ResNet18 编码器 + 图像增广，对齐 ACT 输入侧
+dataset:
+  repo_id: local  # 仅用于打印
+  root: /data/wzh/robot/datasets/pusht
+  image_key: observation.image
+  state_key: observation.state
+  action_key: action
+  augment: true       # 训练集增广：图像与状态/动作联动的随机平移
+
+model:
+  backbone: resnet18  # ImageNet 预训练；小 CNN 用 "cnn"
+  hidden_dim: 128
+  dropout: 0.0
+
+train:
+  lr: 1.0e-4          # 学习率：BC 是回归任务，过大容易震荡
+  batch_size: 64
+  epochs: 50
+  num_workers: 4
+  seed: 42
+  device: cuda
+  # 单步 BC 没有 action_horizon / chunk_size / temporal ensemble，
+  # 每步只预测当前时刻动作 a_t，这正是它作为基线的意义。

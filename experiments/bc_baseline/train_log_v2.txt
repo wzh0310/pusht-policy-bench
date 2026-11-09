@@ -1,0 +1,404 @@
+WARNING:lerobot.utils.import_utils:'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+WARNING:lerobot.utils.import_utils:'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+模型参数量: 11.31M | 训练集 24614 帧 | 验证集 1036 帧
+  epoch 0 step 50/384 loss 0.2606
+  epoch 0 step 100/384 loss 0.1544
+  epoch 0 step 150/384 loss 0.1173
+  epoch 0 step 200/384 loss 0.0971
+  epoch 0 step 250/384 loss 0.0847
+  epoch 0 step 300/384 loss 0.0758
+  epoch 0 step 350/384 loss 0.0692
+epoch 0: train_loss 0.0658 | val_loss 0.0401 | 84s
+  epoch 1 step 50/384 loss 0.0258
+  epoch 1 step 100/384 loss 0.0259
+  epoch 1 step 150/384 loss 0.0259
+  epoch 1 step 200/384 loss 0.0257
+  epoch 1 step 250/384 loss 0.0253
+  epoch 1 step 300/384 loss 0.0249
+  epoch 1 step 350/384 loss 0.0247
+epoch 1: train_loss 0.0245 | val_loss 0.0351 | 84s
+  epoch 2 step 50/384 loss 0.0199
+  epoch 2 step 100/384 loss 0.0202
+  epoch 2 step 150/384 loss 0.0201
+  epoch 2 step 200/384 loss 0.0200
+  epoch 2 step 250/384 loss 0.0200
+  epoch 2 step 300/384 loss 0.0198
+  epoch 2 step 350/384 loss 0.0197
+epoch 2: train_loss 0.0197 | val_loss 0.0312 | 83s
+  epoch 3 step 50/384 loss 0.0186
+  epoch 3 step 100/384 loss 0.0180
+  epoch 3 step 150/384 loss 0.0176
+  epoch 3 step 200/384 loss 0.0176
+  epoch 3 step 250/384 loss 0.0175
+  epoch 3 step 300/384 loss 0.0174
+  epoch 3 step 350/384 loss 0.0173
+epoch 3: train_loss 0.0173 | val_loss 0.0279 | 83s
+  epoch 4 step 50/384 loss 0.0161
+  epoch 4 step 100/384 loss 0.0157
+  epoch 4 step 150/384 loss 0.0159
+  epoch 4 step 200/384 loss 0.0155
+  epoch 4 step 250/384 loss 0.0153
+  epoch 4 step 300/384 loss 0.0152
+  epoch 4 step 350/384 loss 0.0152
+epoch 4: train_loss 0.0151 | val_loss 0.0294 | 83s
+  epoch 5 step 50/384 loss 0.0132
+  epoch 5 step 100/384 loss 0.0136
+  epoch 5 step 150/384 loss 0.0141
+  epoch 5 step 200/384 loss 0.0140
+  epoch 5 step 250/384 loss 0.0140
+  epoch 5 step 300/384 loss 0.0140
+  epoch 5 step 350/384 loss 0.0141
+epoch 5: train_loss 0.0141 | val_loss 0.0255 | 83s
+  epoch 6 step 50/384 loss 0.0137
+  epoch 6 step 100/384 loss 0.0133
+  epoch 6 step 150/384 loss 0.0132
+  epoch 6 step 200/384 loss 0.0135
+  epoch 6 step 250/384 loss 0.0133
+  epoch 6 step 300/384 loss 0.0131
+  epoch 6 step 350/384 loss 0.0130
+epoch 6: train_loss 0.0130 | val_loss 0.0278 | 83s
+  epoch 7 step 50/384 loss 0.0130
+  epoch 7 step 100/384 loss 0.0125
+  epoch 7 step 150/384 loss 0.0123
+  epoch 7 step 200/384 loss 0.0122
+  epoch 7 step 250/384 loss 0.0123
+  epoch 7 step 300/384 loss 0.0123
+  epoch 7 step 350/384 loss 0.0123
+epoch 7: train_loss 0.0122 | val_loss 0.0240 | 83s
+  epoch 8 step 50/384 loss 0.0111
+  epoch 8 step 100/384 loss 0.0114
+  epoch 8 step 150/384 loss 0.0115
+  epoch 8 step 200/384 loss 0.0116
+  epoch 8 step 250/384 loss 0.0116
+  epoch 8 step 300/384 loss 0.0116
+  epoch 8 step 350/384 loss 0.0116
+epoch 8: train_loss 0.0116 | val_loss 0.0294 | 83s
+  epoch 9 step 50/384 loss 0.0113
+  epoch 9 step 100/384 loss 0.0112
+  epoch 9 step 150/384 loss 0.0113
+  epoch 9 step 200/384 loss 0.0112
+  epoch 9 step 250/384 loss 0.0114
+  epoch 9 step 300/384 loss 0.0114
+  epoch 9 step 350/384 loss 0.0113
+epoch 9: train_loss 0.0112 | val_loss 0.0283 | 83s
+  epoch 10 step 50/384 loss 0.0096
+  epoch 10 step 100/384 loss 0.0100
+  epoch 10 step 150/384 loss 0.0101
+  epoch 10 step 200/384 loss 0.0105
+  epoch 10 step 250/384 loss 0.0106
+  epoch 10 step 300/384 loss 0.0106
+  epoch 10 step 350/384 loss 0.0105
+epoch 10: train_loss 0.0105 | val_loss 0.0296 | 83s
+  epoch 11 step 50/384 loss 0.0107
+  epoch 11 step 100/384 loss 0.0105
+  epoch 11 step 150/384 loss 0.0103
+  epoch 11 step 200/384 loss 0.0102
+  epoch 11 step 250/384 loss 0.0101
+  epoch 11 step 300/384 loss 0.0104
+  epoch 11 step 350/384 loss 0.0103
+epoch 11: train_loss 0.0103 | val_loss 0.0309 | 83s
+  epoch 12 step 50/384 loss 0.0102
+  epoch 12 step 100/384 loss 0.0100
+  epoch 12 step 150/384 loss 0.0097
+  epoch 12 step 200/384 loss 0.0096
+  epoch 12 step 250/384 loss 0.0097
+  epoch 12 step 300/384 loss 0.0099
+  epoch 12 step 350/384 loss 0.0098
+epoch 12: train_loss 0.0098 | val_loss 0.0252 | 83s
+  epoch 13 step 50/384 loss 0.0091
+  epoch 13 step 100/384 loss 0.0095
+  epoch 13 step 150/384 loss 0.0095
+  epoch 13 step 200/384 loss 0.0096
+  epoch 13 step 250/384 loss 0.0094
+  epoch 13 step 300/384 loss 0.0094
+  epoch 13 step 350/384 loss 0.0094
+epoch 13: train_loss 0.0093 | val_loss 0.0263 | 83s
+  epoch 14 step 50/384 loss 0.0091
+  epoch 14 step 100/384 loss 0.0087
+  epoch 14 step 150/384 loss 0.0088
+  epoch 14 step 200/384 loss 0.0089
+  epoch 14 step 250/384 loss 0.0088
+  epoch 14 step 300/384 loss 0.0089
+  epoch 14 step 350/384 loss 0.0089
+epoch 14: train_loss 0.0089 | val_loss 0.0260 | 84s
+  epoch 15 step 50/384 loss 0.0083
+  epoch 15 step 100/384 loss 0.0083
+  epoch 15 step 150/384 loss 0.0085
+  epoch 15 step 200/384 loss 0.0084
+  epoch 15 step 250/384 loss 0.0085
+  epoch 15 step 300/384 loss 0.0084
+  epoch 15 step 350/384 loss 0.0084
+epoch 15: train_loss 0.0084 | val_loss 0.0268 | 84s
+  epoch 16 step 50/384 loss 0.0080
+  epoch 16 step 100/384 loss 0.0083
+  epoch 16 step 150/384 loss 0.0083
+  epoch 16 step 200/384 loss 0.0082
+  epoch 16 step 250/384 loss 0.0081
+  epoch 16 step 300/384 loss 0.0082
+  epoch 16 step 350/384 loss 0.0083
+epoch 16: train_loss 0.0083 | val_loss 0.0253 | 82s
+  epoch 17 step 50/384 loss 0.0080
+  epoch 17 step 100/384 loss 0.0080
+  epoch 17 step 150/384 loss 0.0078
+  epoch 17 step 200/384 loss 0.0079
+  epoch 17 step 250/384 loss 0.0081
+  epoch 17 step 300/384 loss 0.0081
+  epoch 17 step 350/384 loss 0.0083
+epoch 17: train_loss 0.0083 | val_loss 0.0256 | 82s
+  epoch 18 step 50/384 loss 0.0086
+  epoch 18 step 100/384 loss 0.0081
+  epoch 18 step 150/384 loss 0.0079
+  epoch 18 step 200/384 loss 0.0080
+  epoch 18 step 250/384 loss 0.0080
+  epoch 18 step 300/384 loss 0.0080
+  epoch 18 step 350/384 loss 0.0080
+epoch 18: train_loss 0.0080 | val_loss 0.0225 | 82s
+  epoch 19 step 50/384 loss 0.0068
+  epoch 19 step 100/384 loss 0.0073
+  epoch 19 step 150/384 loss 0.0075
+  epoch 19 step 200/384 loss 0.0074
+  epoch 19 step 250/384 loss 0.0076
+  epoch 19 step 300/384 loss 0.0077
+  epoch 19 step 350/384 loss 0.0077
+epoch 19: train_loss 0.0077 | val_loss 0.0230 | 82s
+  epoch 20 step 50/384 loss 0.0069
+  epoch 20 step 100/384 loss 0.0070
+  epoch 20 step 150/384 loss 0.0071
+  epoch 20 step 200/384 loss 0.0071
+  epoch 20 step 250/384 loss 0.0072
+  epoch 20 step 300/384 loss 0.0073
+  epoch 20 step 350/384 loss 0.0074
+epoch 20: train_loss 0.0075 | val_loss 0.0246 | 82s
+  epoch 21 step 50/384 loss 0.0069
+  epoch 21 step 100/384 loss 0.0070
+  epoch 21 step 150/384 loss 0.0069
+  epoch 21 step 200/384 loss 0.0068
+  epoch 21 step 250/384 loss 0.0069
+  epoch 21 step 300/384 loss 0.0070
+  epoch 21 step 350/384 loss 0.0071
+epoch 21: train_loss 0.0072 | val_loss 0.0227 | 82s
+  epoch 22 step 50/384 loss 0.0076
+  epoch 22 step 100/384 loss 0.0073
+  epoch 22 step 150/384 loss 0.0072
+  epoch 22 step 200/384 loss 0.0072
+  epoch 22 step 250/384 loss 0.0072
+  epoch 22 step 300/384 loss 0.0071
+  epoch 22 step 350/384 loss 0.0071
+epoch 22: train_loss 0.0071 | val_loss 0.0239 | 82s
+  epoch 23 step 50/384 loss 0.0064
+  epoch 23 step 100/384 loss 0.0064
+  epoch 23 step 150/384 loss 0.0067
+  epoch 23 step 200/384 loss 0.0067
+  epoch 23 step 250/384 loss 0.0069
+  epoch 23 step 300/384 loss 0.0069
+  epoch 23 step 350/384 loss 0.0070
+epoch 23: train_loss 0.0070 | val_loss 0.0236 | 83s
+  epoch 24 step 50/384 loss 0.0066
+  epoch 24 step 100/384 loss 0.0066
+  epoch 24 step 150/384 loss 0.0065
+  epoch 24 step 200/384 loss 0.0065
+  epoch 24 step 250/384 loss 0.0066
+  epoch 24 step 300/384 loss 0.0066
+  epoch 24 step 350/384 loss 0.0067
+epoch 24: train_loss 0.0067 | val_loss 0.0226 | 83s
+  epoch 25 step 50/384 loss 0.0061
+  epoch 25 step 100/384 loss 0.0062
+  epoch 25 step 150/384 loss 0.0061
+  epoch 25 step 200/384 loss 0.0062
+  epoch 25 step 250/384 loss 0.0062
+  epoch 25 step 300/384 loss 0.0064
+  epoch 25 step 350/384 loss 0.0064
+epoch 25: train_loss 0.0064 | val_loss 0.0209 | 83s
+  epoch 26 step 50/384 loss 0.0065
+  epoch 26 step 100/384 loss 0.0065
+  epoch 26 step 150/384 loss 0.0063
+  epoch 26 step 200/384 loss 0.0064
+  epoch 26 step 250/384 loss 0.0065
+  epoch 26 step 300/384 loss 0.0064
+  epoch 26 step 350/384 loss 0.0064
+epoch 26: train_loss 0.0064 | val_loss 0.0234 | 83s
+  epoch 27 step 50/384 loss 0.0057
+  epoch 27 step 100/384 loss 0.0059
+  epoch 27 step 150/384 loss 0.0060
+  epoch 27 step 200/384 loss 0.0060
+  epoch 27 step 250/384 loss 0.0061
+  epoch 27 step 300/384 loss 0.0062
+  epoch 27 step 350/384 loss 0.0062
+epoch 27: train_loss 0.0062 | val_loss 0.0236 | 83s
+  epoch 28 step 50/384 loss 0.0057
+  epoch 28 step 100/384 loss 0.0059
+  epoch 28 step 150/384 loss 0.0059
+  epoch 28 step 200/384 loss 0.0060
+  epoch 28 step 250/384 loss 0.0061
+  epoch 28 step 300/384 loss 0.0061
+  epoch 28 step 350/384 loss 0.0060
+epoch 28: train_loss 0.0060 | val_loss 0.0213 | 83s
+  epoch 29 step 50/384 loss 0.0052
+  epoch 29 step 100/384 loss 0.0053
+  epoch 29 step 150/384 loss 0.0058
+  epoch 29 step 200/384 loss 0.0058
+  epoch 29 step 250/384 loss 0.0058
+  epoch 29 step 300/384 loss 0.0059
+  epoch 29 step 350/384 loss 0.0059
+epoch 29: train_loss 0.0059 | val_loss 0.0215 | 84s
+  epoch 30 step 50/384 loss 0.0053
+  epoch 30 step 100/384 loss 0.0052
+  epoch 30 step 150/384 loss 0.0053
+  epoch 30 step 200/384 loss 0.0055
+  epoch 30 step 250/384 loss 0.0055
+  epoch 30 step 300/384 loss 0.0056
+  epoch 30 step 350/384 loss 0.0056
+epoch 30: train_loss 0.0056 | val_loss 0.0232 | 84s
+  epoch 31 step 50/384 loss 0.0052
+  epoch 31 step 100/384 loss 0.0054
+  epoch 31 step 150/384 loss 0.0055
+  epoch 31 step 200/384 loss 0.0054
+  epoch 31 step 250/384 loss 0.0054
+  epoch 31 step 300/384 loss 0.0055
+  epoch 31 step 350/384 loss 0.0055
+epoch 31: train_loss 0.0055 | val_loss 0.0222 | 76s
+  epoch 32 step 50/384 loss 0.0054
+  epoch 32 step 100/384 loss 0.0050
+  epoch 32 step 150/384 loss 0.0051
+  epoch 32 step 200/384 loss 0.0053
+  epoch 32 step 250/384 loss 0.0054
+  epoch 32 step 300/384 loss 0.0055
+  epoch 32 step 350/384 loss 0.0055
+epoch 32: train_loss 0.0056 | val_loss 0.0225 | 80s
+  epoch 33 step 50/384 loss 0.0051
+  epoch 33 step 100/384 loss 0.0052
+  epoch 33 step 150/384 loss 0.0052
+  epoch 33 step 200/384 loss 0.0052
+  epoch 33 step 250/384 loss 0.0053
+  epoch 33 step 300/384 loss 0.0053
+  epoch 33 step 350/384 loss 0.0053
+epoch 33: train_loss 0.0054 | val_loss 0.0238 | 73s
+  epoch 34 step 50/384 loss 0.0049
+  epoch 34 step 100/384 loss 0.0051
+  epoch 34 step 150/384 loss 0.0051
+  epoch 34 step 200/384 loss 0.0052
+  epoch 34 step 250/384 loss 0.0052
+  epoch 34 step 300/384 loss 0.0052
+  epoch 34 step 350/384 loss 0.0052
+epoch 34: train_loss 0.0052 | val_loss 0.0235 | 73s
+  epoch 35 step 50/384 loss 0.0047
+  epoch 35 step 100/384 loss 0.0050
+  epoch 35 step 150/384 loss 0.0049
+  epoch 35 step 200/384 loss 0.0048
+  epoch 35 step 250/384 loss 0.0048
+  epoch 35 step 300/384 loss 0.0050
+  epoch 35 step 350/384 loss 0.0050
+epoch 35: train_loss 0.0051 | val_loss 0.0228 | 73s
+  epoch 36 step 50/384 loss 0.0048
+  epoch 36 step 100/384 loss 0.0052
+  epoch 36 step 150/384 loss 0.0054
+  epoch 36 step 200/384 loss 0.0054
+  epoch 36 step 250/384 loss 0.0054
+  epoch 36 step 300/384 loss 0.0053
+  epoch 36 step 350/384 loss 0.0053
+epoch 36: train_loss 0.0053 | val_loss 0.0244 | 73s
+  epoch 37 step 50/384 loss 0.0048
+  epoch 37 step 100/384 loss 0.0048
+  epoch 37 step 150/384 loss 0.0049
+  epoch 37 step 200/384 loss 0.0051
+  epoch 37 step 250/384 loss 0.0050
+  epoch 37 step 300/384 loss 0.0050
+  epoch 37 step 350/384 loss 0.0050
+epoch 37: train_loss 0.0050 | val_loss 0.0215 | 73s
+  epoch 38 step 50/384 loss 0.0044
+  epoch 38 step 100/384 loss 0.0046
+  epoch 38 step 150/384 loss 0.0046
+  epoch 38 step 200/384 loss 0.0046
+  epoch 38 step 250/384 loss 0.0046
+  epoch 38 step 300/384 loss 0.0047
+  epoch 38 step 350/384 loss 0.0047
+epoch 38: train_loss 0.0047 | val_loss 0.0243 | 73s
+  epoch 39 step 50/384 loss 0.0041
+  epoch 39 step 100/384 loss 0.0042
+  epoch 39 step 150/384 loss 0.0042
+  epoch 39 step 200/384 loss 0.0044
+  epoch 39 step 250/384 loss 0.0044
+  epoch 39 step 300/384 loss 0.0045
+  epoch 39 step 350/384 loss 0.0045
+epoch 39: train_loss 0.0046 | val_loss 0.0254 | 73s
+  epoch 40 step 50/384 loss 0.0044
+  epoch 40 step 100/384 loss 0.0042
+  epoch 40 step 150/384 loss 0.0043
+  epoch 40 step 200/384 loss 0.0044
+  epoch 40 step 250/384 loss 0.0045
+  epoch 40 step 300/384 loss 0.0045
+  epoch 40 step 350/384 loss 0.0046
+epoch 40: train_loss 0.0046 | val_loss 0.0213 | 73s
+  epoch 41 step 50/384 loss 0.0043
+  epoch 41 step 100/384 loss 0.0043
+  epoch 41 step 150/384 loss 0.0044
+  epoch 41 step 200/384 loss 0.0044
+  epoch 41 step 250/384 loss 0.0044
+  epoch 41 step 300/384 loss 0.0044
+  epoch 41 step 350/384 loss 0.0044
+epoch 41: train_loss 0.0045 | val_loss 0.0208 | 73s
+  epoch 42 step 50/384 loss 0.0042
+  epoch 42 step 100/384 loss 0.0042
+  epoch 42 step 150/384 loss 0.0043
+  epoch 42 step 200/384 loss 0.0043
+  epoch 42 step 250/384 loss 0.0043
+  epoch 42 step 300/384 loss 0.0043
+  epoch 42 step 350/384 loss 0.0043
+epoch 42: train_loss 0.0043 | val_loss 0.0238 | 73s
+  epoch 43 step 50/384 loss 0.0041
+  epoch 43 step 100/384 loss 0.0041
+  epoch 43 step 150/384 loss 0.0040
+  epoch 43 step 200/384 loss 0.0041
+  epoch 43 step 250/384 loss 0.0042
+  epoch 43 step 300/384 loss 0.0043
+  epoch 43 step 350/384 loss 0.0043
+epoch 43: train_loss 0.0043 | val_loss 0.0227 | 73s
+  epoch 44 step 50/384 loss 0.0044
+  epoch 44 step 100/384 loss 0.0045
+  epoch 44 step 150/384 loss 0.0044
+  epoch 44 step 200/384 loss 0.0044
+  epoch 44 step 250/384 loss 0.0044
+  epoch 44 step 300/384 loss 0.0044
+  epoch 44 step 350/384 loss 0.0043
+epoch 44: train_loss 0.0043 | val_loss 0.0249 | 73s
+  epoch 45 step 50/384 loss 0.0037
+  epoch 45 step 100/384 loss 0.0039
+  epoch 45 step 150/384 loss 0.0039
+  epoch 45 step 200/384 loss 0.0040
+  epoch 45 step 250/384 loss 0.0041
+  epoch 45 step 300/384 loss 0.0042
+  epoch 45 step 350/384 loss 0.0042
+epoch 45: train_loss 0.0042 | val_loss 0.0211 | 73s
+  epoch 46 step 50/384 loss 0.0037
+  epoch 46 step 100/384 loss 0.0038
+  epoch 46 step 150/384 loss 0.0038
+  epoch 46 step 200/384 loss 0.0040
+  epoch 46 step 250/384 loss 0.0040
+  epoch 46 step 300/384 loss 0.0040
+  epoch 46 step 350/384 loss 0.0041
+epoch 46: train_loss 0.0041 | val_loss 0.0220 | 73s
+  epoch 47 step 50/384 loss 0.0039
+  epoch 47 step 100/384 loss 0.0038
+  epoch 47 step 150/384 loss 0.0038
+  epoch 47 step 200/384 loss 0.0039
+  epoch 47 step 250/384 loss 0.0039
+  epoch 47 step 300/384 loss 0.0040
+  epoch 47 step 350/384 loss 0.0040
+epoch 47: train_loss 0.0040 | val_loss 0.0213 | 73s
+  epoch 48 step 50/384 loss 0.0034
+  epoch 48 step 100/384 loss 0.0035
+  epoch 48 step 150/384 loss 0.0035
+  epoch 48 step 200/384 loss 0.0035
+  epoch 48 step 250/384 loss 0.0036
+  epoch 48 step 300/384 loss 0.0036
+  epoch 48 step 350/384 loss 0.0037
+epoch 48: train_loss 0.0038 | val_loss 0.0233 | 73s
+  epoch 49 step 50/384 loss 0.0037
+  epoch 49 step 100/384 loss 0.0039
+  epoch 49 step 150/384 loss 0.0038
+  epoch 49 step 200/384 loss 0.0037
+  epoch 49 step 250/384 loss 0.0038
+  epoch 49 step 300/384 loss 0.0038
+  epoch 49 step 350/384 loss 0.0038
+epoch 49: train_loss 0.0038 | val_loss 0.0223 | 73s
+训练完成，最优验证 loss: 0.0208，权重保存在 /data/wzh/robot/bc/outputs/config_v2/checkpoint.pt

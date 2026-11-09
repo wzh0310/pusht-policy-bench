@@ -1,0 +1,21 @@
+# BC 超参数（lr / batch_size / 网络结构）
+dataset:
+  repo_id: local  # 仅用于打印
+  root: /data/wzh/robot/datasets/pusht
+  image_key: observation.image
+  state_key: observation.state
+  action_key: action
+
+model:
+  hidden_dim: 128
+  dropout: 0.0
+
+train:
+  lr: 1.0e-4          # 学习率：BC 是回归任务，过大容易震荡
+  batch_size: 64
+  epochs: 20
+  num_workers: 4
+  seed: 42
+  device: cuda
+  # 单步 BC 没有 action_horizon / chunk_size / temporal ensemble，
+  # 每步只预测当前时刻动作 a_t，这正是它作为基线的意义。

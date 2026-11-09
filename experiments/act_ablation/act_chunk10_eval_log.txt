@@ -1,0 +1,1978 @@
+WARNING 2026-11-11 21:51:58 figs/eval.py:73 No job name provided, using 'pusht_act' as job name.
+INFO 2026-11-11 21:51:58 bot_eval.py:813 {'env': {'disable_env_checker': True,
+         'episode_length': 300,
+         'features': {},
+         'features_map': {},
+         'fps': 10,
+         'max_parallel_tasks': 1,
+         'obs_type': 'pixels_agent_pos',
+         'render_mode': 'rgb_array',
+         'server': None,
+         'task': 'PushT-v0',
+         'visualization_height': 384,
+         'visualization_width': 384},
+ 'eval': {'batch_size': 50,
+          'max_episode_steps': None,
+          'n_episodes': 50,
+          'recording': True,
+          'recording_private': False,
+          'recording_repo_id': None,
+          'use_async_envs': True},
+ 'job_name': 'pusht_act',
+ 'output_dir': PosixPath('/data/wzh/robot/outputs/act_chunk10_eval'),
+ 'policy': {'chunk_size': 10,
+            'device': 'cuda',
+            'dim_feedforward': 3200,
+            'dim_model': 512,
+            'dropout': 0.1,
+            'dtype': None,
+            'feedforward_activation': 'relu',
+            'input_features': {'observation.image': {'shape': (3, 96, 96),
+                                                     'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.state': {'shape': (2,),
+                                                     'type': <FeatureType.STATE: 'STATE'>}},
+            'kl_weight': 10.0,
+            'latent_dim': 32,
+            'license': None,
+            'n_action_steps': 10,
+            'n_decoder_layers': 1,
+            'n_encoder_layers': 4,
+            'n_heads': 8,
+            'n_obs_steps': 1,
+            'n_vae_encoder_layers': 4,
+            'normalization_mapping': {'ACTION': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'STATE': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'VISUAL': <NormalizationMode.MEAN_STD: 'MEAN_STD'>},
+            'optimizer_fused': None,
+            'optimizer_lr': 2e-05,
+            'optimizer_lr_backbone': 2e-06,
+            'optimizer_weight_decay': 0.0001,
+            'output_features': {'action': {'shape': (2,),
+                                           'type': <FeatureType.ACTION: 'ACTION'>}},
+            'pre_norm': False,
+            'pretrained_backbone_weights': 'ResNet18_Weights.IMAGENET1K_V1',
+            'pretrained_path': PosixPath('/data/wzh/robot/outputs/act_chunk10/checkpoints/last/pretrained_model'),
+            'pretrained_revision': None,
+            'private': None,
+            'push_to_hub': False,
+            'replace_final_stride_with_dilation': 0,
+            'repo_id': 'local/act_chunk10',
+            'tags': None,
+            'temporal_ensemble_coeff': None,
+            'use_amp': False,
+            'use_peft': False,
+            'use_vae': True,
+            'vision_backbone': 'resnet18'},
+ 'rename_map': {},
+ 'seed': 1000,
+ 'tf32': True,
+ 'trust_remote_code': False}
+INFO 2026-11-11 21:51:58 bot_eval.py:835 Output dir: /data/wzh/robot/outputs/act_chunk10_eval
+INFO 2026-11-11 21:51:58 bot_eval.py:837 Making environment (batch_size=50, async=True).
+INFO 2026-11-11 21:52:06 bot_eval.py:862 Making policy.
+Loading weights from local directory
+Stepping through eval batches:   0%|          | 0/1 [00:00<?, ?it/s]WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+WARNING 2026-11-11 21:52:07 rt_utils.py:108 'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: libsvtav1
+INFO 2026-11-11 21:52:07 gs/video.py:193 Using video codec: hevc
+
+Running rollout with at most 300 steps:   0%|          | 0/300 [00:00<?, ?it/s][A
+Running rollout with at most 300 steps:   0%|          | 0/300 [00:00<?, ?it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   0%|          | 1/300 [00:00<02:09,  2.30it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   0%|          | 1/300 [00:00<02:09,  2.30it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   1%|          | 2/300 [00:00<02:09,  2.30it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   1%|          | 3/300 [00:00<00:47,  6.20it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   1%|          | 3/300 [00:00<00:47,  6.20it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   1%|▏         | 4/300 [00:00<00:47,  6.20it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   2%|▏         | 5/300 [00:00<00:32,  8.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   2%|▏         | 5/300 [00:00<00:32,  8.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   2%|▏         | 6/300 [00:00<00:32,  8.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   2%|▏         | 7/300 [00:00<00:27, 10.83it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   2%|▏         | 7/300 [00:00<00:27, 10.83it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   3%|▎         | 8/300 [00:00<00:26, 10.83it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   3%|▎         | 9/300 [00:00<00:24, 12.12it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   3%|▎         | 9/300 [00:01<00:24, 12.12it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   3%|▎         | 10/300 [00:01<00:23, 12.12it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   4%|▎         | 11/300 [00:01<00:21, 13.22it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   4%|▎         | 11/300 [00:01<00:21, 13.22it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   4%|▍         | 12/300 [00:01<00:21, 13.22it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   4%|▍         | 13/300 [00:01<00:20, 13.78it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   4%|▍         | 13/300 [00:01<00:20, 13.78it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   5%|▍         | 14/300 [00:01<00:20, 13.78it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   5%|▌         | 15/300 [00:01<00:19, 14.27it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   5%|▌         | 15/300 [00:01<00:19, 14.27it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   5%|▌         | 16/300 [00:01<00:19, 14.27it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   6%|▌         | 17/300 [00:01<00:19, 14.39it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   6%|▌         | 17/300 [00:01<00:19, 14.39it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   6%|▌         | 18/300 [00:01<00:19, 14.39it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   6%|▋         | 19/300 [00:01<00:19, 14.69it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   6%|▋         | 19/300 [00:01<00:19, 14.69it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   7%|▋         | 20/300 [00:01<00:19, 14.69it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   7%|▋         | 21/300 [00:01<00:18, 14.72it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   7%|▋         | 21/300 [00:01<00:18, 14.72it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   7%|▋         | 22/300 [00:01<00:18, 14.72it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   8%|▊         | 23/300 [00:01<00:18, 15.00it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   8%|▊         | 23/300 [00:01<00:18, 15.00it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   8%|▊         | 24/300 [00:02<00:18, 15.00it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   8%|▊         | 25/300 [00:02<00:18, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   8%|▊         | 25/300 [00:02<00:18, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   9%|▊         | 26/300 [00:02<00:18, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   9%|▉         | 27/300 [00:02<00:18, 14.78it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   9%|▉         | 27/300 [00:02<00:18, 14.78it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:   9%|▉         | 28/300 [00:02<00:18, 14.78it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  10%|▉         | 29/300 [00:02<00:18, 14.90it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  10%|▉         | 29/300 [00:02<00:18, 14.90it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  10%|█         | 30/300 [00:02<00:18, 14.90it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  10%|█         | 31/300 [00:02<00:17, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  10%|█         | 31/300 [00:02<00:17, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  11%|█         | 32/300 [00:02<00:17, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  11%|█         | 33/300 [00:02<00:17, 15.34it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  11%|█         | 33/300 [00:02<00:17, 15.34it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  11%|█▏        | 34/300 [00:02<00:17, 15.34it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  12%|█▏        | 35/300 [00:02<00:17, 15.41it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  12%|█▏        | 35/300 [00:02<00:17, 15.41it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  12%|█▏        | 36/300 [00:02<00:17, 15.41it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  12%|█▏        | 37/300 [00:02<00:16, 15.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  12%|█▏        | 37/300 [00:02<00:16, 15.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  13%|█▎        | 38/300 [00:02<00:16, 15.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  13%|█▎        | 39/300 [00:02<00:16, 15.50it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  13%|█▎        | 39/300 [00:02<00:16, 15.50it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  13%|█▎        | 40/300 [00:03<00:16, 15.50it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  14%|█▎        | 41/300 [00:03<00:16, 15.32it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  14%|█▎        | 41/300 [00:03<00:16, 15.32it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  14%|█▍        | 42/300 [00:03<00:16, 15.32it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  14%|█▍        | 43/300 [00:03<00:17, 15.01it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  14%|█▍        | 43/300 [00:03<00:17, 15.01it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  15%|█▍        | 44/300 [00:03<00:17, 15.01it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  15%|█▌        | 45/300 [00:03<00:16, 15.18it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  15%|█▌        | 45/300 [00:03<00:16, 15.18it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  15%|█▌        | 46/300 [00:03<00:16, 15.18it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  16%|█▌        | 47/300 [00:03<00:16, 15.03it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  16%|█▌        | 47/300 [00:03<00:16, 15.03it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  16%|█▌        | 48/300 [00:03<00:16, 15.03it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  16%|█▋        | 49/300 [00:03<00:16, 14.89it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  16%|█▋        | 49/300 [00:03<00:16, 14.89it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  17%|█▋        | 50/300 [00:03<00:16, 14.89it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  17%|█▋        | 51/300 [00:03<00:17, 14.60it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  17%|█▋        | 51/300 [00:03<00:17, 14.60it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  17%|█▋        | 52/300 [00:03<00:16, 14.60it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  18%|█▊        | 53/300 [00:03<00:16, 14.84it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  18%|█▊        | 53/300 [00:03<00:16, 14.84it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  18%|█▊        | 54/300 [00:04<00:16, 14.84it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  18%|█▊        | 55/300 [00:04<00:16, 14.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  18%|█▊        | 55/300 [00:04<00:16, 14.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  19%|█▊        | 56/300 [00:04<00:16, 14.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  19%|█▉        | 57/300 [00:04<00:16, 14.69it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  19%|█▉        | 57/300 [00:04<00:16, 14.69it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  19%|█▉        | 58/300 [00:04<00:16, 14.69it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  20%|█▉        | 59/300 [00:04<00:16, 14.76it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  20%|█▉        | 59/300 [00:04<00:16, 14.76it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  20%|██        | 60/300 [00:04<00:16, 14.76it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  20%|██        | 61/300 [00:04<00:16, 14.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  20%|██        | 61/300 [00:04<00:16, 14.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  21%|██        | 62/300 [00:04<00:16, 14.52it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  21%|██        | 63/300 [00:04<00:16, 14.45it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  21%|██        | 63/300 [00:04<00:16, 14.45it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  21%|██▏       | 64/300 [00:04<00:16, 14.45it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  22%|██▏       | 65/300 [00:04<00:16, 14.55it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  22%|██▏       | 65/300 [00:04<00:16, 14.55it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  22%|██▏       | 66/300 [00:04<00:16, 14.55it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  22%|██▏       | 67/300 [00:04<00:16, 14.40it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  22%|██▏       | 67/300 [00:04<00:16, 14.40it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  23%|██▎       | 68/300 [00:04<00:16, 14.40it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  23%|██▎       | 69/300 [00:04<00:16, 14.05it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  23%|██▎       | 69/300 [00:05<00:16, 14.05it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  23%|██▎       | 70/300 [00:05<00:16, 14.05it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  24%|██▎       | 71/300 [00:05<00:16, 14.21it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  24%|██▎       | 71/300 [00:05<00:16, 14.21it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  24%|██▍       | 72/300 [00:05<00:16, 14.21it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  24%|██▍       | 73/300 [00:05<00:15, 14.44it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  24%|██▍       | 73/300 [00:05<00:15, 14.44it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  25%|██▍       | 74/300 [00:05<00:15, 14.44it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  25%|██▌       | 75/300 [00:05<00:15, 14.59it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  25%|██▌       | 75/300 [00:05<00:15, 14.59it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  25%|██▌       | 76/300 [00:05<00:15, 14.59it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  26%|██▌       | 77/300 [00:05<00:15, 14.40it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  26%|██▌       | 77/300 [00:05<00:15, 14.40it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  26%|██▌       | 78/300 [00:05<00:15, 14.40it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  26%|██▋       | 79/300 [00:05<00:15, 14.39it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  26%|██▋       | 79/300 [00:05<00:15, 14.39it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  27%|██▋       | 80/300 [00:05<00:15, 14.39it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  27%|██▋       | 81/300 [00:05<00:15, 14.16it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  27%|██▋       | 81/300 [00:05<00:15, 14.16it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  27%|██▋       | 82/300 [00:05<00:15, 14.16it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  28%|██▊       | 83/300 [00:05<00:15, 14.22it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  28%|██▊       | 83/300 [00:06<00:15, 14.22it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  28%|██▊       | 84/300 [00:06<00:15, 14.22it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  28%|██▊       | 85/300 [00:06<00:15, 14.17it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  28%|██▊       | 85/300 [00:06<00:15, 14.17it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  29%|██▊       | 86/300 [00:06<00:15, 14.17it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  29%|██▉       | 87/300 [00:06<00:14, 14.28it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  29%|██▉       | 87/300 [00:06<00:14, 14.28it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  29%|██▉       | 88/300 [00:06<00:14, 14.28it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  30%|██▉       | 89/300 [00:06<00:14, 14.29it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  30%|██▉       | 89/300 [00:06<00:14, 14.29it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  30%|███       | 90/300 [00:06<00:14, 14.29it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  30%|███       | 91/300 [00:06<00:14, 14.56it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  30%|███       | 91/300 [00:06<00:14, 14.56it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  31%|███       | 92/300 [00:06<00:14, 14.56it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  31%|███       | 93/300 [00:06<00:14, 14.51it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  31%|███       | 93/300 [00:06<00:14, 14.51it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  31%|███▏      | 94/300 [00:06<00:14, 14.51it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  32%|███▏      | 95/300 [00:06<00:14, 14.32it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  32%|███▏      | 95/300 [00:06<00:14, 14.32it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  32%|███▏      | 96/300 [00:06<00:14, 14.32it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  32%|███▏      | 97/300 [00:06<00:14, 14.49it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  32%|███▏      | 97/300 [00:06<00:14, 14.49it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  33%|███▎      | 98/300 [00:07<00:13, 14.49it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  33%|███▎      | 99/300 [00:07<00:13, 14.82it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  33%|███▎      | 99/300 [00:07<00:13, 14.82it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  33%|███▎      | 100/300 [00:07<00:13, 14.82it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  34%|███▎      | 101/300 [00:07<00:13, 14.67it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  34%|███▎      | 101/300 [00:07<00:13, 14.67it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  34%|███▍      | 102/300 [00:07<00:13, 14.67it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  34%|███▍      | 103/300 [00:07<00:13, 14.86it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  34%|███▍      | 103/300 [00:07<00:13, 14.86it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  35%|███▍      | 104/300 [00:07<00:13, 14.86it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  35%|███▌      | 105/300 [00:07<00:13, 14.91it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  35%|███▌      | 105/300 [00:07<00:13, 14.91it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  35%|███▌      | 106/300 [00:07<00:13, 14.91it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  36%|███▌      | 107/300 [00:07<00:12, 15.00it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  36%|███▌      | 107/300 [00:07<00:12, 15.00it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  36%|███▌      | 108/300 [00:07<00:12, 15.00it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  36%|███▋      | 109/300 [00:07<00:12, 14.97it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  36%|███▋      | 109/300 [00:07<00:12, 14.97it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  37%|███▋      | 110/300 [00:07<00:12, 14.97it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  37%|███▋      | 111/300 [00:07<00:12, 14.68it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  37%|███▋      | 111/300 [00:07<00:12, 14.68it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  37%|███▋      | 112/300 [00:07<00:12, 14.68it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  38%|███▊      | 113/300 [00:07<00:12, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  38%|███▊      | 113/300 [00:08<00:12, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  38%|███▊      | 114/300 [00:08<00:12, 14.96it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  38%|███▊      | 115/300 [00:08<00:12, 15.15it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  38%|███▊      | 115/300 [00:08<00:12, 15.15it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  39%|███▊      | 116/300 [00:08<00:12, 15.15it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  39%|███▉      | 117/300 [00:08<00:11, 15.57it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  39%|███▉      | 117/300 [00:08<00:11, 15.57it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  39%|███▉      | 118/300 [00:08<00:11, 15.57it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  40%|███▉      | 119/300 [00:08<00:11, 15.64it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  40%|███▉      | 119/300 [00:08<00:11, 15.64it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  40%|████      | 120/300 [00:08<00:11, 15.64it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  40%|████      | 121/300 [00:08<00:11, 15.36it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  40%|████      | 121/300 [00:08<00:11, 15.36it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  41%|████      | 122/300 [00:08<00:11, 15.36it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  41%|████      | 123/300 [00:08<00:11, 15.35it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  41%|████      | 123/300 [00:08<00:11, 15.35it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  41%|████▏     | 124/300 [00:08<00:11, 15.35it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  42%|████▏     | 125/300 [00:08<00:11, 15.63it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  42%|████▏     | 125/300 [00:08<00:11, 15.63it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  42%|████▏     | 126/300 [00:08<00:11, 15.63it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  42%|████▏     | 127/300 [00:08<00:11, 15.34it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  42%|████▏     | 127/300 [00:08<00:11, 15.34it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  43%|████▎     | 128/300 [00:09<00:11, 15.34it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  43%|████▎     | 129/300 [00:09<00:11, 15.27it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  43%|████▎     | 129/300 [00:09<00:11, 15.27it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  43%|████▎     | 130/300 [00:09<00:11, 15.27it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  44%|████▎     | 131/300 [00:09<00:11, 15.29it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  44%|████▎     | 131/300 [00:09<00:11, 15.29it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  44%|████▍     | 132/300 [00:09<00:10, 15.29it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  44%|████▍     | 133/300 [00:09<00:10, 15.38it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  44%|████▍     | 133/300 [00:09<00:10, 15.38it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  45%|████▍     | 134/300 [00:09<00:10, 15.38it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  45%|████▌     | 135/300 [00:09<00:10, 15.45it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  45%|████▌     | 135/300 [00:09<00:10, 15.45it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  45%|████▌     | 136/300 [00:09<00:10, 15.45it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  46%|████▌     | 137/300 [00:09<00:10, 15.53it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  46%|████▌     | 137/300 [00:09<00:10, 15.53it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  46%|████▌     | 138/300 [00:09<00:10, 15.53it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  46%|████▋     | 139/300 [00:09<00:10, 15.54it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  46%|████▋     | 139/300 [00:09<00:10, 15.54it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  47%|████▋     | 140/300 [00:09<00:10, 15.54it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  47%|████▋     | 141/300 [00:09<00:10, 15.46it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  47%|████▋     | 141/300 [00:09<00:10, 15.46it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  47%|████▋     | 142/300 [00:09<00:10, 15.46it/s, running_success_rate=0.0%][A
+Running rollout with at most 300 steps:  48%|████▊     | 143/300 [00:09<00:10, 15.21it/s, running_success_rate=0.0%][A
+
+Map:   0%|          | 0/144 [00:00<?, ? examples/s][A[AMap: 100%|██████████| 144/144 [00:00<00:00, 2163.48 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+
+Running rollout with at most 300 steps:  48%|████▊     | 143/300 [00:10<00:10, 15.21it/s, running_success_rate=2.0%][A
+Running rollout with at most 300 steps:  48%|████▊     | 144/300 [00:10<00:10, 15.21it/s, running_success_rate=2.0%][A
+Running rollout with at most 300 steps:  48%|████▊     | 145/300 [00:10<00:20,  7.52it/s, running_success_rate=2.0%][A
+
+Map:   0%|          | 0/146 [00:00<?, ? examples/s][A[AMap: 100%|██████████| 146/146 [00:00<00:00, 1882.29 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c8297f7a80] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps:  48%|████▊     | 145/300 [00:11<00:20,  7.52it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  49%|████▊     | 146/300 [00:12<00:20,  7.52it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  49%|████▉     | 147/300 [00:12<00:49,  3.10it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  49%|████▉     | 147/300 [00:12<00:49,  3.10it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  49%|████▉     | 148/300 [00:12<00:49,  3.10it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  50%|████▉     | 149/300 [00:12<00:37,  4.07it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  50%|████▉     | 149/300 [00:12<00:37,  4.07it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  50%|█████     | 150/300 [00:12<00:36,  4.07it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  50%|█████     | 151/300 [00:12<00:28,  5.17it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  50%|█████     | 151/300 [00:12<00:28,  5.17it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  51%|█████     | 152/300 [00:12<00:28,  5.17it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  51%|█████     | 153/300 [00:12<00:22,  6.46it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  51%|█████     | 153/300 [00:12<00:22,  6.46it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  51%|█████▏    | 154/300 [00:12<00:22,  6.46it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  52%|█████▏    | 155/300 [00:12<00:18,  7.82it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  52%|█████▏    | 155/300 [00:12<00:18,  7.82it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  52%|█████▏    | 156/300 [00:12<00:18,  7.82it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  52%|█████▏    | 157/300 [00:12<00:15,  9.25it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  52%|█████▏    | 157/300 [00:12<00:15,  9.25it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  53%|█████▎    | 158/300 [00:12<00:15,  9.25it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  53%|█████▎    | 159/300 [00:12<00:13, 10.54it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  53%|█████▎    | 159/300 [00:12<00:13, 10.54it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  53%|█████▎    | 160/300 [00:12<00:13, 10.54it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  54%|█████▎    | 161/300 [00:12<00:11, 11.61it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  54%|█████▎    | 161/300 [00:13<00:11, 11.61it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  54%|█████▍    | 162/300 [00:13<00:11, 11.61it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  54%|█████▍    | 163/300 [00:13<00:10, 12.61it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  54%|█████▍    | 163/300 [00:13<00:10, 12.61it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  55%|█████▍    | 164/300 [00:13<00:10, 12.61it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  55%|█████▌    | 165/300 [00:13<00:10, 13.47it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  55%|█████▌    | 165/300 [00:13<00:10, 13.47it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  55%|█████▌    | 166/300 [00:13<00:09, 13.47it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  56%|█████▌    | 167/300 [00:13<00:09, 14.08it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  56%|█████▌    | 167/300 [00:13<00:09, 14.08it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  56%|█████▌    | 168/300 [00:13<00:09, 14.08it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  56%|█████▋    | 169/300 [00:13<00:09, 14.41it/s, running_success_rate=4.0%][A
+Running rollout with at most 300 steps:  56%|█████▋    | 169/300 [00:13<00:09, 14.41it/s, running_success_rate=4.0%][A
+
+Map:   0%|          | 0/171 [00:00<?, ? examples/s][A[AMap: 100%|██████████| 171/171 [00:00<00:00, 2288.74 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c839275b80] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps:  57%|█████▋    | 170/300 [00:13<00:09, 14.41it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  57%|█████▋    | 171/300 [00:13<00:16,  8.04it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  57%|█████▋    | 171/300 [00:14<00:16,  8.04it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  57%|█████▋    | 172/300 [00:14<00:15,  8.04it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  58%|█████▊    | 173/300 [00:14<00:13,  9.37it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  58%|█████▊    | 173/300 [00:14<00:13,  9.37it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  58%|█████▊    | 174/300 [00:14<00:13,  9.37it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  58%|█████▊    | 175/300 [00:14<00:11, 10.62it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  58%|█████▊    | 175/300 [00:14<00:11, 10.62it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  59%|█████▊    | 176/300 [00:14<00:11, 10.62it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  59%|█████▉    | 177/300 [00:14<00:10, 11.71it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  59%|█████▉    | 177/300 [00:14<00:10, 11.71it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  59%|█████▉    | 178/300 [00:14<00:10, 11.71it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  60%|█████▉    | 179/300 [00:14<00:09, 12.75it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  60%|█████▉    | 179/300 [00:14<00:09, 12.75it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  60%|██████    | 180/300 [00:14<00:09, 12.75it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  60%|██████    | 181/300 [00:14<00:08, 13.48it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  60%|██████    | 181/300 [00:14<00:08, 13.48it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  61%|██████    | 182/300 [00:14<00:08, 13.48it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  61%|██████    | 183/300 [00:14<00:08, 13.86it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  61%|██████    | 183/300 [00:14<00:08, 13.86it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  61%|██████▏   | 184/300 [00:14<00:08, 13.86it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  62%|██████▏   | 185/300 [00:14<00:08, 14.37it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  62%|██████▏   | 185/300 [00:14<00:08, 14.37it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  62%|██████▏   | 186/300 [00:15<00:07, 14.37it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  62%|██████▏   | 187/300 [00:15<00:07, 14.69it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  62%|██████▏   | 187/300 [00:15<00:07, 14.69it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  63%|██████▎   | 188/300 [00:15<00:07, 14.69it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  63%|██████▎   | 189/300 [00:15<00:07, 14.93it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  63%|██████▎   | 189/300 [00:15<00:07, 14.93it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  63%|██████▎   | 190/300 [00:15<00:07, 14.93it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  64%|██████▎   | 191/300 [00:15<00:07, 15.19it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  64%|██████▎   | 191/300 [00:15<00:07, 15.19it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  64%|██████▍   | 192/300 [00:15<00:07, 15.19it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  64%|██████▍   | 193/300 [00:15<00:06, 15.50it/s, running_success_rate=6.0%][A
+Running rollout with at most 300 steps:  64%|██████▍   | 193/300 [00:15<00:06, 15.50it/s, running_success_rate=6.0%][A
+
+Map:   0%|          | 0/195 [00:00<?, ? examples/s][A[AMap: 100%|██████████| 195/195 [00:00<00:00, 2283.02 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c83242e7c0] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps:  65%|██████▍   | 194/300 [00:16<00:06, 15.50it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  65%|██████▌   | 195/300 [00:16<00:20,  5.25it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  65%|██████▌   | 195/300 [00:16<00:20,  5.25it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  65%|██████▌   | 196/300 [00:16<00:19,  5.25it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  66%|██████▌   | 197/300 [00:16<00:15,  6.54it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  66%|██████▌   | 197/300 [00:16<00:15,  6.54it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  66%|██████▌   | 198/300 [00:16<00:15,  6.54it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  66%|██████▋   | 199/300 [00:16<00:12,  7.94it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  66%|██████▋   | 199/300 [00:16<00:12,  7.94it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  67%|██████▋   | 200/300 [00:16<00:12,  7.94it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  67%|██████▋   | 201/300 [00:16<00:10,  9.30it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  67%|██████▋   | 201/300 [00:16<00:10,  9.30it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  67%|██████▋   | 202/300 [00:16<00:10,  9.30it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  68%|██████▊   | 203/300 [00:16<00:09, 10.59it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  68%|██████▊   | 203/300 [00:16<00:09, 10.59it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  68%|██████▊   | 204/300 [00:17<00:09, 10.59it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  68%|██████▊   | 205/300 [00:17<00:08, 11.74it/s, running_success_rate=8.0%][A
+Running rollout with at most 300 steps:  68%|██████▊   | 205/300 [00:17<00:08, 11.74it/s, running_success_rate=8.0%][A
+
+Map:   0%|          | 0/207 [00:00<?, ? examples/s][A[AMap: 100%|██████████| 207/207 [00:00<00:00, 2286.49 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c8364b3a00] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps:  69%|██████▊   | 206/300 [00:17<00:08, 11.74it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  69%|██████▉   | 207/300 [00:17<00:12,  7.22it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  69%|██████▉   | 207/300 [00:17<00:12,  7.22it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  69%|██████▉   | 208/300 [00:17<00:12,  7.22it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  70%|██████▉   | 209/300 [00:17<00:10,  8.57it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  70%|██████▉   | 209/300 [00:17<00:10,  8.57it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  70%|███████   | 210/300 [00:17<00:10,  8.57it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  70%|███████   | 211/300 [00:17<00:09,  9.88it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  70%|███████   | 211/300 [00:17<00:09,  9.88it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  71%|███████   | 212/300 [00:17<00:08,  9.88it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  71%|███████   | 213/300 [00:17<00:07, 11.19it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  71%|███████   | 213/300 [00:17<00:07, 11.19it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  71%|███████▏  | 214/300 [00:18<00:07, 11.19it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  72%|███████▏  | 215/300 [00:18<00:06, 12.30it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  72%|███████▏  | 215/300 [00:18<00:06, 12.30it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  72%|███████▏  | 216/300 [00:18<00:06, 12.30it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  72%|███████▏  | 217/300 [00:18<00:06, 13.20it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  72%|███████▏  | 217/300 [00:18<00:06, 13.20it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  73%|███████▎  | 218/300 [00:18<00:06, 13.20it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  73%|███████▎  | 219/300 [00:18<00:05, 13.95it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  73%|███████▎  | 219/300 [00:18<00:05, 13.95it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  73%|███████▎  | 220/300 [00:18<00:05, 13.95it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  74%|███████▎  | 221/300 [00:18<00:05, 14.19it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  74%|███████▎  | 221/300 [00:18<00:05, 14.19it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  74%|███████▍  | 222/300 [00:18<00:05, 14.19it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  74%|███████▍  | 223/300 [00:18<00:05, 14.92it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  74%|███████▍  | 223/300 [00:18<00:05, 14.92it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  75%|███████▍  | 224/300 [00:18<00:05, 14.92it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  75%|███████▌  | 225/300 [00:18<00:04, 15.26it/s, running_success_rate=10.0%][A
+Running rollout with at most 300 steps:  75%|███████▌  | 225/300 [00:18<00:04, 15.26it/s, running_success_rate=10.0%][A
+
+Map:   0%|          | 0/227 [00:00<?, ? examples/s][A[AMap: 100%|██████████| 227/227 [00:00<00:00, 2248.32 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c836dff540] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps:  75%|███████▌  | 226/300 [00:19<00:04, 15.26it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  76%|███████▌  | 227/300 [00:19<00:14,  5.01it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  76%|███████▌  | 227/300 [00:19<00:14,  5.01it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  76%|███████▌  | 228/300 [00:19<00:14,  5.01it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  76%|███████▋  | 229/300 [00:19<00:11,  6.28it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  76%|███████▋  | 229/300 [00:19<00:11,  6.28it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  77%|███████▋  | 230/300 [00:19<00:11,  6.28it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  77%|███████▋  | 231/300 [00:19<00:08,  7.67it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  77%|███████▋  | 231/300 [00:20<00:08,  7.67it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  77%|███████▋  | 232/300 [00:20<00:08,  7.67it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  78%|███████▊  | 233/300 [00:20<00:07,  9.04it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  78%|███████▊  | 233/300 [00:20<00:07,  9.04it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  78%|███████▊  | 234/300 [00:20<00:07,  9.04it/s, running_success_rate=12.0%][A
+Running rollout with at most 300 steps:  78%|███████▊  | 235/300 [00:20<00:06, 10.47it/s, running_success_rate=12.0%][A
+
+Map:   0%|          | 0/236 [00:00<?, ? examples/s][A[A
+
+Map: 100%|██████████| 236/236 [00:00<00:00, 2326.78 examples/s][A[AMap: 100%|██████████| 236/236 [00:00<00:00, 2285.56 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c845b3df00] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps:  78%|███████▊  | 235/300 [00:20<00:06, 10.47it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  79%|███████▊  | 236/300 [00:20<00:06, 10.47it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  79%|███████▉  | 237/300 [00:20<00:09,  6.70it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  79%|███████▉  | 237/300 [00:20<00:09,  6.70it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  79%|███████▉  | 238/300 [00:20<00:09,  6.70it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  80%|███████▉  | 239/300 [00:20<00:07,  8.15it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  80%|███████▉  | 239/300 [00:20<00:07,  8.15it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  80%|████████  | 240/300 [00:21<00:07,  8.15it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  80%|████████  | 241/300 [00:21<00:06,  9.49it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  80%|████████  | 241/300 [00:21<00:06,  9.49it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  81%|████████  | 242/300 [00:21<00:06,  9.49it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  81%|████████  | 243/300 [00:21<00:05, 10.85it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  81%|████████  | 243/300 [00:21<00:05, 10.85it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  81%|████████▏ | 244/300 [00:21<00:05, 10.85it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  82%|████████▏ | 245/300 [00:21<00:04, 12.18it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  82%|████████▏ | 245/300 [00:21<00:04, 12.18it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  82%|████████▏ | 246/300 [00:21<00:04, 12.18it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  82%|████████▏ | 247/300 [00:21<00:03, 13.39it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  82%|████████▏ | 247/300 [00:21<00:03, 13.39it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  83%|████████▎ | 248/300 [00:21<00:03, 13.39it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  83%|████████▎ | 249/300 [00:21<00:03, 14.27it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  83%|████████▎ | 249/300 [00:21<00:03, 14.27it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  83%|████████▎ | 250/300 [00:21<00:03, 14.27it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  84%|████████▎ | 251/300 [00:21<00:03, 14.87it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  84%|████████▎ | 251/300 [00:21<00:03, 14.87it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  84%|████████▍ | 252/300 [00:21<00:03, 14.87it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  84%|████████▍ | 253/300 [00:21<00:03, 15.18it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  84%|████████▍ | 253/300 [00:21<00:03, 15.18it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  85%|████████▍ | 254/300 [00:21<00:03, 15.18it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  85%|████████▌ | 255/300 [00:21<00:02, 15.65it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  85%|████████▌ | 255/300 [00:21<00:02, 15.65it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  85%|████████▌ | 256/300 [00:21<00:02, 15.65it/s, running_success_rate=14.0%][A
+Running rollout with at most 300 steps:  86%|████████▌ | 257/300 [00:21<00:02, 15.90it/s, running_success_rate=14.0%][A
+
+Map:   0%|          | 0/258 [00:00<?, ? examples/s][A[A
+
+Map:  89%|████████▉ | 230/258 [00:00<00:00, 2278.30 examples/s][A[AMap: 100%|██████████| 258/258 [00:00<00:00, 2170.25 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c845b3ac40] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps:  86%|████████▌ | 257/300 [00:22<00:02, 15.90it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  86%|████████▌ | 258/300 [00:22<00:02, 15.90it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  86%|████████▋ | 259/300 [00:22<00:07,  5.15it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  86%|████████▋ | 259/300 [00:23<00:07,  5.15it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  87%|████████▋ | 260/300 [00:23<00:07,  5.15it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  87%|████████▋ | 261/300 [00:23<00:06,  6.42it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  87%|████████▋ | 261/300 [00:23<00:06,  6.42it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  87%|████████▋ | 262/300 [00:23<00:05,  6.42it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  88%|████████▊ | 263/300 [00:23<00:04,  7.84it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  88%|████████▊ | 263/300 [00:23<00:04,  7.84it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  88%|████████▊ | 264/300 [00:23<00:04,  7.84it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  88%|████████▊ | 265/300 [00:23<00:03,  9.38it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  88%|████████▊ | 265/300 [00:23<00:03,  9.38it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  89%|████████▊ | 266/300 [00:23<00:03,  9.38it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  89%|████████▉ | 267/300 [00:23<00:03, 10.80it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  89%|████████▉ | 267/300 [00:23<00:03, 10.80it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  89%|████████▉ | 268/300 [00:23<00:02, 10.80it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  90%|████████▉ | 269/300 [00:23<00:02, 12.11it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  90%|████████▉ | 269/300 [00:23<00:02, 12.11it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  90%|█████████ | 270/300 [00:23<00:02, 12.11it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  90%|█████████ | 271/300 [00:23<00:02, 13.03it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  90%|█████████ | 271/300 [00:23<00:02, 13.03it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  91%|█████████ | 272/300 [00:23<00:02, 13.03it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  91%|█████████ | 273/300 [00:23<00:01, 13.92it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  91%|█████████ | 273/300 [00:23<00:01, 13.92it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  91%|█████████▏| 274/300 [00:23<00:01, 13.92it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  92%|█████████▏| 275/300 [00:23<00:01, 14.60it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  92%|█████████▏| 275/300 [00:23<00:01, 14.60it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  92%|█████████▏| 276/300 [00:24<00:01, 14.60it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  92%|█████████▏| 277/300 [00:24<00:01, 15.14it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  92%|█████████▏| 277/300 [00:24<00:01, 15.14it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  93%|█████████▎| 278/300 [00:24<00:01, 15.14it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  93%|█████████▎| 279/300 [00:24<00:01, 15.21it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  93%|█████████▎| 279/300 [00:24<00:01, 15.21it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  93%|█████████▎| 280/300 [00:24<00:01, 15.21it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  94%|█████████▎| 281/300 [00:24<00:01, 15.33it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  94%|█████████▎| 281/300 [00:24<00:01, 15.33it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  94%|█████████▍| 282/300 [00:24<00:01, 15.33it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  94%|█████████▍| 283/300 [00:24<00:01, 15.73it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  94%|█████████▍| 283/300 [00:24<00:01, 15.73it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  95%|█████████▍| 284/300 [00:24<00:01, 15.73it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  95%|█████████▌| 285/300 [00:24<00:00, 16.00it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  95%|█████████▌| 285/300 [00:24<00:00, 16.00it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  95%|█████████▌| 286/300 [00:24<00:00, 16.00it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  96%|█████████▌| 287/300 [00:24<00:00, 16.17it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  96%|█████████▌| 287/300 [00:24<00:00, 16.17it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  96%|█████████▌| 288/300 [00:24<00:00, 16.17it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  96%|█████████▋| 289/300 [00:24<00:00, 16.31it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  96%|█████████▋| 289/300 [00:24<00:00, 16.31it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  97%|█████████▋| 290/300 [00:24<00:00, 16.31it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  97%|█████████▋| 291/300 [00:24<00:00, 16.24it/s, running_success_rate=16.0%][A
+Running rollout with at most 300 steps:  97%|█████████▋| 291/300 [00:24<00:00, 16.24it/s, running_success_rate=16.0%][A
+
+Map:   0%|          | 0/293 [00:00<?, ? examples/s][A[A
+
+Map:  79%|███████▉  | 232/293 [00:00<00:00, 2293.02 examples/s][A[AMap: 100%|██████████| 293/293 [00:00<00:00, 2205.37 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f1d4240] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps:  97%|█████████▋| 292/300 [00:25<00:00, 16.24it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  98%|█████████▊| 293/300 [00:25<00:00,  7.35it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  98%|█████████▊| 293/300 [00:25<00:00,  7.35it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  98%|█████████▊| 294/300 [00:25<00:00,  7.35it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  98%|█████████▊| 295/300 [00:25<00:00,  8.84it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  98%|█████████▊| 295/300 [00:25<00:00,  8.84it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  99%|█████████▊| 296/300 [00:25<00:00,  8.84it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  99%|█████████▉| 297/300 [00:25<00:00, 10.33it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  99%|█████████▉| 297/300 [00:25<00:00, 10.33it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps:  99%|█████████▉| 298/300 [00:25<00:00, 10.33it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps: 100%|█████████▉| 299/300 [00:25<00:00, 11.73it/s, running_success_rate=18.0%][A
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  77%|███████▋  | 232/300 [00:00<00:00, 2304.35 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2216.43 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c831454480] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  68%|██████▊   | 203/300 [00:00<00:00, 2004.11 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2015.80 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c83b687880] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  71%|███████▏  | 214/300 [00:00<00:00, 2112.90 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2059.69 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c83b687880] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  77%|███████▋  | 231/300 [00:00<00:00, 2282.34 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2199.76 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f1e0c00] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  77%|███████▋  | 231/300 [00:00<00:00, 2288.88 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2200.21 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c83b687880] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  76%|███████▌  | 227/300 [00:00<00:00, 2243.55 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2164.56 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f1e0c00] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  77%|███████▋  | 230/300 [00:00<00:00, 2278.47 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2180.21 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c83b687880] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  76%|███████▋  | 229/300 [00:00<00:00, 2263.13 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2193.48 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c83b687880] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  75%|███████▌  | 226/300 [00:00<00:00, 2223.30 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2168.04 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f1e0c00] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  75%|███████▌  | 225/300 [00:00<00:00, 2222.71 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2102.77 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c83b687880] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|███████▉  | 239/300 [00:00<00:00, 2364.18 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2262.80 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f1e0c00] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|████████  | 241/300 [00:00<00:00, 2379.64 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2267.45 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c80e764740] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|███████▉  | 239/300 [00:00<00:00, 2372.17 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2271.07 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82efa45c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|███████▉  | 239/300 [00:00<00:00, 2367.42 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2269.93 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82efa45c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  77%|███████▋  | 231/300 [00:00<00:00, 2283.60 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2066.07 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c8316d1440] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|███████▉  | 239/300 [00:00<00:00, 2366.84 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2208.41 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82efa45c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|████████  | 241/300 [00:00<00:00, 2379.21 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2271.69 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f14a300] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|████████  | 241/300 [00:00<00:00, 2379.46 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2275.97 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82ef87cc0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  79%|███████▊  | 236/300 [00:00<00:00, 2337.47 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2197.86 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+
+Running rollout with at most 300 steps: 100%|█████████▉| 299/300 [00:39<00:00, 11.73it/s, running_success_rate=18.0%][A[mp4 @ 0x55c8316d1440] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  77%|███████▋  | 230/300 [00:00<00:00, 2273.56 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2160.38 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c80e764740] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  67%|██████▋   | 200/300 [00:00<00:00, 1981.53 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 1945.43 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f1e0c00] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  71%|███████   | 212/300 [00:00<00:00, 2096.47 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2042.53 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c8364b8f40] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  74%|███████▍  | 222/300 [00:00<00:00, 2193.55 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2093.61 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c8364b8f40] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|████████  | 241/300 [00:00<00:00, 2379.34 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2282.99 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82ef91e40] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|████████  | 241/300 [00:00<00:00, 2383.63 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2280.02 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82efa45c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|███████▉  | 239/300 [00:00<00:00, 2365.64 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2256.00 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c80e55a540] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  79%|███████▉  | 237/300 [00:00<00:00, 2336.99 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2213.89 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c80e55a540] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|███████▉  | 239/300 [00:00<00:00, 2364.73 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2261.44 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c8316d1440] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  75%|███████▍  | 224/300 [00:00<00:00, 2217.12 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2054.56 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c831749d80] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|███████▉  | 239/300 [00:00<00:00, 2371.19 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2230.23 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f0bd6c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  79%|███████▉  | 238/300 [00:00<00:00, 2361.42 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2259.64 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82efa45c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  68%|██████▊   | 204/300 [00:00<00:00, 2020.22 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2039.95 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f080f00] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  77%|███████▋  | 232/300 [00:00<00:00, 2296.82 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2213.64 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c80e5581c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|████████  | 240/300 [00:00<00:00, 2372.08 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2267.26 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c837a3f800] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|████████  | 240/300 [00:00<00:00, 2374.21 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2269.33 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c80dd4e440] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  75%|███████▍  | 224/300 [00:00<00:00, 2214.66 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2162.77 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c831d1d340] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  78%|███████▊  | 234/300 [00:00<00:00, 2319.81 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2237.44 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82efa45c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  78%|███████▊  | 234/300 [00:00<00:00, 2314.16 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2184.43 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f0bd6c0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|████████  | 241/300 [00:00<00:00, 2383.94 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2218.98 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c831d22ec0] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  80%|███████▉  | 239/300 [00:00<00:00, 2368.34 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2265.71 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c80e8c3700] Starting second pass: moving the moov atom to the beginning of the file
+
+
+Map:   0%|          | 0/300 [00:00<?, ? examples/s][A[A
+
+Map:  70%|███████   | 210/300 [00:00<00:00, 2084.42 examples/s][A[AMap: 100%|██████████| 300/300 [00:00<00:00, 2075.83 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:	SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :	GCC 14.2.1 20250110 (Red Hat 14.2.1-7)	 64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:14:07
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 6
+Svt[info]: Number of PPCS 161
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile	tier (auto)	level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator 		: 96 / 96 / 10 / 1
+Svt[info]: SVT [config]: bit-depth / color format 					: 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct 					: 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type 			: 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor 					: CRF / 30 
+Svt[info]: SVT [config]: AQ mode / variance boost 					: 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias 			: 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 0x55c82f0bd6c0] Starting second pass: moving the moov atom to the beginning of the file
+
+Running rollout with at most 300 steps: 100%|█████████▉| 299/300 [00:54<00:00, 11.73it/s, running_success_rate=18.0%][A
+Running rollout with at most 300 steps: 100%|██████████| 300/300 [00:54<00:00,  5.09s/it, running_success_rate=18.0%][A
+                                                                                                                     [AStepping through eval batches:   0%|          | 0/1 [00:54<?, ?it/s, running_success_rate=18.0%]Stepping through eval batches: 100%|██████████| 1/1 [00:54<00:00, 54.69s/it, running_success_rate=18.0%]Stepping through eval batches: 100%|██████████| 1/1 [00:54<00:00, 54.69s/it, running_success_rate=18.0%]
+INFO 2026-11-11 21:53:02 bot_eval.py:908 Overall Aggregated Metrics:
+INFO 2026-11-11 21:53:02 bot_eval.py:909 {'avg_sum_reward': 87.70547681389377, 'avg_max_reward': 0.630500077912584, 'pc_success': 18.0, 'n_episodes': 50, 'n_success': 9, 'pc_success_ci95': [9.770192670234175, 30.796053674300783], 'eval_s': 55.03560137748718, 'eval_ep_s': 1.100712037086487, 'video_paths': [], 'predicted_video_paths': []}
+INFO 2026-11-11 21:53:02 bot_eval.py:911 Success rate 18.0% (9/50 episodes, 95% Wilson interval 9.8% to 30.8%)
+INFO 2026-11-11 21:53:02 bot_eval.py:922 
+Aggregated Metrics for per_task:
+INFO 2026-11-11 21:53:02 bot_eval.py:923 [{'task_group': 'PushT-v0', 'task_id': 0, 'metrics': {'sum_rewards': [0.14480386674404144, 5.736191272735596, 3.2440578937530518, 29.568849563598633, 57.22816467285156, 0.5871667265892029, 71.89868927001953, 168.73765563964844, 106.1666259765625, 23.080427169799805, 75.05148315429688, 106.98821258544922, 1.0172123908996582, 128.68917846679688, 88.34332275390625, 247.01565551757812, 197.44805908203125, 55.42301940917969, 169.18545532226562, 64.81806182861328, 125.24073028564453, 9.758979797363281, 19.002761840820312, 0.00975402444601059, 176.60765075683594, 178.79554748535156, 57.136497497558594, 152.38311767578125, 116.63861846923828, 79.58430480957031, 72.44743347167969, 106.99248504638672, 76.59821319580078, 0.010713956318795681, 0.0, 179.6928253173828, 156.98992919921875, 176.86203002929688, 86.68444061279297, 159.8793487548828, 0.0, 115.22587585449219, 159.59478759765625, 3.6923294067382812, 90.03440856933594, 220.74606323242188, 135.3664093017578, 3.045135021209717, 0.0, 125.88115692138672], 'max_rewards': [0.016161635518074036, 0.28107988834381104, 0.12427441775798798, 0.300260454416275, 1.0, 0.05548742040991783, 0.6926102042198181, 1.0, 1.0, 0.5180382132530212, 1.0, 0.4124811589717865, 0.12536272406578064, 0.9749655723571777, 0.4089343547821045, 0.9841812252998352, 0.9874994158744812, 1.0, 0.9757765531539917, 0.2585204839706421, 0.8523032665252686, 0.03472847118973732, 0.07630564272403717, 0.006299865897744894, 0.9955155253410339, 0.7174597978591919, 0.6801734566688538, 0.9664480686187744, 1.0, 0.55416339635849, 1.0, 0.9582006931304932, 1.0, 0.00890128593891859, 0.0, 0.9879335761070251, 0.9894764423370361, 0.9915550351142883, 0.9780057072639465, 0.9823460578918457, 0.0, 0.9056975841522217, 0.9808094501495361, 0.11423157900571823, 0.9836071133613586, 0.9935658574104309, 1.0, 0.06875935941934586, 0.0, 0.5828829407691956], 'successes': [False, False, False, False, True, False, False, True, True, False, True, False, False, False, False, False, False, True, False, False, False, False, False, False, False, False, False, False, True, False, True, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, True, False, False, False], 'video_paths': [], 'predicted_video_paths': []}, 'n_episodes': 50, 'n_success': 9, 'pc_success': 18.0, 'pc_success_ci95': [9.770192670234175, 30.796053674300783]}]
+INFO 2026-11-11 21:53:02 bot_eval.py:922 
+Aggregated Metrics for per_group:
+INFO 2026-11-11 21:53:02 bot_eval.py:923 {'PushT-v0': {'avg_sum_reward': 87.70547681389377, 'avg_max_reward': 0.630500077912584, 'pc_success': 18.0, 'n_episodes': 50, 'n_success': 9, 'pc_success_ci95': [9.770192670234175, 30.796053674300783], 'video_paths': [], 'predicted_video_paths': []}}
+INFO 2026-11-11 21:53:02 bot_eval.py:922 
+Aggregated Metrics for overall:
+INFO 2026-11-11 21:53:02 bot_eval.py:923 {'avg_sum_reward': 87.70547681389377, 'avg_max_reward': 0.630500077912584, 'pc_success': 18.0, 'n_episodes': 50, 'n_success': 9, 'pc_success_ci95': [9.770192670234175, 30.796053674300783], 'eval_s': 55.03560137748718, 'eval_ep_s': 1.100712037086487, 'video_paths': [], 'predicted_video_paths': []}
+INFO 2026-11-11 21:53:02 bot_eval.py:941 End of eval
