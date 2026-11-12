@@ -86,7 +86,9 @@ def main():
                        out_dir / "checkpoint.pt")
         if step >= cfg["train"]["steps"]:
             break
+    mem = torch.cuda.max_memory_allocated() / 2**20
     print(f"完成，最优验证 loss: {best_val:.4f}，权重: {out_dir/'checkpoint.pt'}")
+    print(f"峰值显存: {mem:.0f} MiB")
 
 
 if __name__ == "__main__":

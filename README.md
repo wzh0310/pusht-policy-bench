@@ -31,6 +31,7 @@ PushT 是视觉运动模仿学习最常用的基准任务之一：用圆形夹�
 | `act_novae`（消融：关 CVAE） | PushT-v0 | **50** | 6.0% | — | 0.680 | 1.49 s/ep |
 | `bc_baseline` v1（自训最小 BC） | PushT-v0 | 20 | 0.0% | 34.54 | 0.132 | ≈0.3 s/ep |
 | `diffusion_baseline`（自训 7.7k 步，公平对照） | PushT-v0 | **50** | **6.0%** | 79.55 | 0.670 | ≈1.6 s/ep |
+| `flow_baseline`（自训流匹配，7.7k 步公平对照） | PushT-v0 | **50** | 2.0% | 65.30 | 0.534 | ≈1.0 s/ep |
 | `act_pusht_baseline` v1（自训 7680 步） | PushT-v0 | 20 | 0.0% | 43.62 | 0.471 | 1.27 s/ep |
 
 自训基线详情（协议、曲线、失败归因）：[experiments/bc_baseline/](experiments/bc_baseline/)（v1 + v2）、[experiments/act_baseline/](experiments/act_baseline/)（v1）、[experiments/act_v2/](experiments/act_v2/)（v2）。

@@ -30,7 +30,13 @@ flow matching）。本仓库的最小实现位于 [baselines/flow/](../baselines
 结构上 Diffusion 的"调度器 + U-Net"两件套，在 Flow 里坍缩成"一个速度场网络"——
 代码量、超参数（beta_start/beta_end/schedule 全部消失）、推理复杂度都更小。
 
-## 3. 实测数据（PushT 最小 demo，2000 步）
+## 3. 完整基线（与 Diffusion 严格同协议，7680 步）
+
+见 [experiments/flow_baseline/](../experiments/flow_baseline/RESULTS.md)：
+Flow 2%（1/50）vs Diffusion 6%（3/50）；Flow 以 1/500 参数、1/10 显存拿到同量级行为，
+推理快 137 倍。结论：极限质量选 Diffusion，工程性价比选 Flow。
+
+## 4. 实测数据（PushT 最小 demo，2000 步）
 
 - 训练：val loss 0.549（epoch 0）→ 0.303（epoch 3），全程平稳无异常；
 - 模型参数量 11.5M（观测编码 11.2M + 速度场仅 0.3M）；

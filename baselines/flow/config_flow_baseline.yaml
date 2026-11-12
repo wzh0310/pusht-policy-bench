@@ -1,0 +1,18 @@
+# Flow Policy 完整基线（与 diffusion_baseline 严格同协议）
+dataset:
+  root: /data/wzh/robot/datasets/pusht
+  horizon: 8
+  augment: false      # 与 diffusion 基线一致：官方默认无增广
+
+model:
+  hidden_dim: 128
+  infer_steps: 10
+
+train:
+  lr: 1.0e-4          # diffusion 基线同为 1e-4
+  batch_size: 64
+  epochs: 25          # 7680 步 = 20 epoch，留余量
+  steps: 7680
+  num_workers: 8
+  seed: 42
+  device: cuda
