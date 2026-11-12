@@ -1,0 +1,32 @@
+WARNING:lerobot.utils.import_utils:libnvrtc.so.13: cannot open shared object file: No such file or directory
+'torchcodec' is installed but cannot decode videos (see the error above). Falling back to 'pyav' as a default decoder.
+WARNING:lerobot.utils.import_utils:libnvrtc.so.13: cannot open shared object file: No such file or directory
+'torchcodec' is installed but cannot decode videos (see the error above). Falling back to 'pyav' as a default decoder.
+模型参数量: 11.52M | 训练集 24614 帧 | 动作块 K=8
+  step 100 loss 0.9214
+  step 200 loss 0.7425
+  step 300 loss 0.6750
+epoch 0: train_loss 0.6426 | val_loss 0.5487 | 83s
+  step 400 loss 0.5150
+  step 500 loss 0.4922
+  step 600 loss 0.4649
+  step 700 loss 0.4403
+epoch 1: train_loss 0.4268 | val_loss 0.4060 | 82s
+  step 800 loss 0.3665
+  step 900 loss 0.3408
+  step 1000 loss 0.3308
+  step 1100 loss 0.3214
+epoch 2: train_loss 0.3186 | val_loss 0.3664 | 82s
+  step 1200 loss 0.2942
+  step 1300 loss 0.2875
+  step 1400 loss 0.2825
+  step 1500 loss 0.2786
+epoch 3: train_loss 0.2760 | val_loss 0.3025 | 83s
+  step 1600 loss 0.2602
+  step 1700 loss 0.2499
+  step 1800 loss 0.2454
+  step 1900 loss 0.2424
+epoch 4: train_loss 0.2415 | val_loss 0.3194 | 82s
+  step 2000 loss 0.2362
+epoch 5: train_loss 0.2362 | val_loss 0.3183 | 19s
+完成，最优验证 loss: 0.3025，权重: /data/wzh/robot/bc/outputs/flow/checkpoint.pt

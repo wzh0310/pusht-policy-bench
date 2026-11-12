@@ -141,7 +141,8 @@ export PYOPENGL_PLATFORM=egl
 ├── configs/
 │   └── act_pusht.yaml      # ACT 训练配置，每个超参标注调参依据
 ├── baselines/
-│   └── bc/                   # 最小单步 BC 基线（代码 + 配置 + 说明）
+│   ├── bc/                   # 最小单步 BC 基线（代码 + 配置 + 说明）
+│   └── flow/                 # 最小 Flow Matching 动作头实现（对照 Diffusion）
 ├── experiments/
 │   ├── bc_baseline/          # BC 20 epoch 训练日志与复现脚本
 │   └── act_warmup/           # ACT 1000 步预热训练日志与复现脚本
@@ -153,6 +154,7 @@ export PYOPENGL_PLATFORM=egl
 │   ├── REPORT.md             # 项目技术报告：原理、基线对比、消融与失效模式分析
 │   ├── comparison.md         # 三算法全维度对比 + 失效模式深度分析（含回放）
 │   ├── diffusion_notes.md    # Diffusion Policy 源码拆解（架构图/形状实测/超参调参方向）
+│   ├── flow_notes.md         # Flow Policy（流匹配）与 Diffusion 的结构差异 + 实测
 │   └── faq.md                # 高频问答（全部答案带实测数据）
 ├── scripts/
 │   ├── eval_pusht.sh       # 评测流水线（含 GPU 预检）

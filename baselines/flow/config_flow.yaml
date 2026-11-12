@@ -1,0 +1,18 @@
+# Flow Policy 最小 demo 配置（2000 步验证流程）
+dataset:
+  root: /data/wzh/robot/datasets/pusht
+  horizon: 8          # 动作块长度（对应 ACT chunk_size / Diffusion horizon）
+  augment: true
+
+model:
+  hidden_dim: 128
+  infer_steps: 10     # Euler 积分步数（对应 Diffusion 的 num_inference_steps）
+
+train:
+  lr: 1.0e-4
+  batch_size: 64
+  epochs: 100         # 2000 步 ≈ 5 epoch，epochs 只是上限
+  steps: 2000
+  num_workers: 4
+  seed: 42
+  device: cuda
