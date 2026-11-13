@@ -45,6 +45,46 @@ PushT 是视觉运动模仿学习最常用的基准任务之一：用圆形夹�
 
 失败样例见 [assets/demo_failure.mp4](assets/demo_failure.mp4)：该 episode 末帧覆盖率停在 0.63，夹爪在目标区边缘来回修正后超时。
 
+## Flow Matching 板块：核心差异与机器人场景价值
+
+> 一页讲清「流匹配和扩散到底差在哪、为什么机器人场景在意」。
+> 源码级对照见 [docs/flow_notes.md](docs/flow_notes.md)，量化证据见
+> [docs/flow_vs_diffusion.md](docs/flow_vs_diffusion.md) 与
+> [experiments/flow_vs_diffusion/](experiments/flow_vs_diffusion/RESULTS.md)。
+
+### 核心差异
+
+| 维度 | Diffusion Policy（DDPM） | Flow Matching |
+|---|---|---|
+| 学什么 | 预测每一步加进去的噪声 ε（100 档离散步） | 预测噪声→动作的**直线路径速度场** v = x₁ − x₀（t∈[0,1] 连续） |
+| 怎么生成 | N 步随机去噪（DDIM 可确定性跳步） | N 步 Euler 积分，**起点固定则结果确定** |
+| 依赖什么 | beta schedule + 调度器 + 大 U-Net（251M） | 无调度表，一个速度场网络即可（最小实现 0.3M） |
+
+一句话：扩散学「每步去掉一点噪声」，流匹配学「整条直线怎么走」——回归目标更直接，
+低步数下更稳，也不需要噪声调度表。
+
+### 机器人场景为什么在意（四条，均为本仓库实测）
+
+1. **控制周期是硬约束**：PushT 10 Hz 约 100 ms 预算，ALOHA 50 Hz 只剩 **20 ms**。
+   实测 Flow 1 步重规划 **2.67 ms**、Diffusion 10 步 **94.54 ms**（超预算 4.7 倍）——
+   高频双臂闭环只有 Flow 1–3 步可用。[推理步数消融表](experiments/flow_vs_diffusion/results/ablation_table.md)
+2. **步数不是越多越好**：直线插值下速度场理论为常数，实测 Flow **1 步反而最优**
+   （峰值覆盖率 **0.727** vs 10 步 0.549），多步 Euler 反而累积中间时刻的拟合误差。
+3. **确定性、可复现**：ODE 起点固定则动作确定，便于回归测试与安全部署；
+   扩散每次采样不同（多模态是优点，也是不确定性来源）。
+4. **训练更稳、参数与显存更省**：同协议 7680 步下训练 loss CV **0.147 vs 0.310**，
+   速度场 0.3M 参数 / 462 MiB 显存 vs U-Net 251M / 4.98 GB。**但要诚实**：
+   同预算成功率仍是 Diffusion **6%** > Flow **2%**，稳定不等于更强。
+   [完整基线](experiments/flow_baseline/RESULTS.md)
+
+### 边界：什么时候不该选 Flow
+
+需要多模态动作多样性（多次采样选优）、且重规划预算 > 100 ms 时，Diffusion 10–20 步
+或 DDIM-5 更合适；50ep 下各组成功率 Wilson 95% CI 全部重叠，**不能用成功率排序**。
+按失效边界而非延迟选型的进一步讨论见
+[docs/failure_mode_analysis.md](docs/failure_mode_analysis.md) 与
+[docs/aloha_dataset_probe.md](docs/aloha_dataset_probe.md)。
+
 ## 核心维度定向对比：扩散 vs 流匹配
 
 > 作品集重点：固定数据集、训练预算、评估协议，只对比「推理速度-步数关系」与「训练稳定性」两个核心维度，
@@ -146,6 +186,7 @@ BC 在此任务上的已知缺陷与对应改进路线（完整推导见 [docs/t
 
 ## 技术报告
 - [ACT 跨本体迁移到 ALOHA 双臂插入](docs/act_aloha_transfer.md)
+- Flow Matching 源码拆解与结构对照见 [docs/flow_notes.md](docs/flow_notes.md)
 
 完整结论汇总（基线对比、消融量化、失效模式分析）见 [docs/REPORT.md](docs/REPORT.md)；
 三算法全维度对比与失效模式深度分析见 [docs/comparison.md](docs/comparison.md)；
