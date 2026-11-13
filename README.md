@@ -145,6 +145,7 @@ BC 在此任务上的已知缺陷与对应改进路线（完整推导见 [docs/t
 - [metaworld_v2_best.gif](assets/metaworld_v2_best.gif)：ACT 迁移——"悬停不接触"过拟合失效
 
 ## 技术报告
+- [ACT 跨本体迁移到 ALOHA 双臂插入](docs/act_aloha_transfer.md)
 
 完整结论汇总（基线对比、消融量化、失效模式分析）见 [docs/REPORT.md](docs/REPORT.md)；
 三算法全维度对比与失效模式深度分析见 [docs/comparison.md](docs/comparison.md)；
@@ -246,6 +247,17 @@ export PYOPENGL_PLATFORM=egl
 | P2 | ACT 从零训练至收敛，记录 loss / 成功率曲线 | 完成（30k 步 5% 成功率） |
 | P3 | ACT / Diffusion / VQ-BeT 横向对比（成功率 + 推理延迟） | 计划 |
 | P4 | 超参消融：`chunk_size` / `n_action_steps` / `kl_weight` / 学习率 | 部分完成（chunk_size、CVAE 见 [experiments/act_ablation/](experiments/act_ablation/)） |
+
+## ACT 跨本体迁移到 ALOHA 双臂插入（快速训练）
+
+把 ACT 从 PushT（单臂 2 维）迁移到 `lerobot/aloha_sim_insertion_human`（双臂 14 维），
+2000 步快速训练跑通，loss 前 900 步 10.73→2.07（-80.7%）。闭环仿真评估因共享环境
+mujoco/dm_control 版本冲突暂未自动跑通，根因与修复方向见报告。
+
+- 完整报告：[docs/act_aloha_transfer.md](docs/act_aloha_transfer.md)
+- 单实验记录与脚本：[experiments/act_aloha/](experiments/act_aloha/RESULTS.md)
+- 训练损失曲线：[assets/act_aloha_loss.png](assets/act_aloha_loss.png)
+- 前序双臂数据探查：[docs/aloha_dataset_probe.md](docs/aloha_dataset_probe.md)
 
 ## 跨环境迁移实验（MetaWorld push-v3）
 
