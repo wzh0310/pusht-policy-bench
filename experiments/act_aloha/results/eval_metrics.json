@@ -1,0 +1,50 @@
+{
+  "experiment": "act_aloha_transfer_eval",
+  "env_task": "AlohaInsertion-v0",
+  "policy_checkpoint": "outputs/act_aloha_demo/checkpoints/002000/pretrained_model",
+  "n_episodes": 5,
+  "n_success": 0,
+  "pc_success": 0.0,
+  "pc_success_ci95_pct": [
+    0.0,
+    43.4
+  ],
+  "avg_sum_reward": 11.4,
+  "avg_max_reward": 0.4,
+  "sum_rewards": [
+    57.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "max_rewards": [
+    2.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "successes": [
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "eval_s": 82.29,
+  "eval_ep_s": 16.46,
+  "max_episode_steps": 400,
+  "seed": 1000,
+  "video_assets": [
+    "assets/act_aloha_eval_ep0.mp4",
+    "assets/act_aloha_eval_ep1.mp4"
+  ],
+  "env_versions": {
+    "mujoco": "3.8.1",
+    "dm-control": "1.0.41",
+    "gym-aloha": "0.1.5",
+    "gymnasium": "1.4.0",
+    "lerobot": "0.7.1"
+  }
+}

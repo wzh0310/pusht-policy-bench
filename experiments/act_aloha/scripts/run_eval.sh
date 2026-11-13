@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # 用 2000 步 checkpoint 在 ALOHA 仿真环境做少量闭环评估（验证跨环境迁移）。
-# 先决条件：mujoco / dm_control / gym-aloha 版本需兼容，否则会报
-# "MjModel object has no attribute 'flex_bandwidth'"；修复方向见 docs/act_aloha_transfer.md。
+# 依赖版本矩阵（实测可跑）：mujoco 3.8.1 / dm-control 1.0.41 / gym-aloha 0.1.5
+#   dm-control 1.0.41 要求 mujoco>=3.8.1，gym-aloha 0.1.5 要求 mujoco<3.9，
+#   交集只有 3.8.1；装 3.17.0 会报 "MjModel object has no attribute 'flex_bandwidth'"。
+#   定位与修复见 docs/act_aloha_transfer.md 第 6 节。
 # 用法：WZH_ROOT=<workspace-root> bash scripts/run_eval.sh
 set -euo pipefail
 

@@ -251,13 +251,15 @@ export PYOPENGL_PLATFORM=egl
 ## ACT 跨本体迁移到 ALOHA 双臂插入（快速训练）
 
 把 ACT 从 PushT（单臂 2 维）迁移到 `lerobot/aloha_sim_insertion_human`（双臂 14 维），
-2000 步快速训练跑通，loss 前 900 步 10.73→2.07（-80.7%）。闭环仿真评估因共享环境
-mujoco/dm_control 版本冲突暂未自动跑通，根因与修复方向见报告。
+2000 步快速训练跑通，loss 前 900 步 10.73→2.07（-80.7%）；闭环仿真评估也已跑通
+（5 集、0 成功，未收敛——只证明链路可用，不作策略能力评价）。原先阻塞评估的
+mujoco/dm_control 版本冲突已定位并修复（降级 mujoco 到 3.8.1），版本矩阵见报告第 6 节。
 
 - 完整报告：[docs/act_aloha_transfer.md](docs/act_aloha_transfer.md)
 - 单实验记录与脚本：[experiments/act_aloha/](experiments/act_aloha/RESULTS.md)
 - 训练损失曲线：[assets/act_aloha_loss.png](assets/act_aloha_loss.png)
 - 前序双臂数据探查：[docs/aloha_dataset_probe.md](docs/aloha_dataset_probe.md)
+- 闭环评估摘要与 rollout 视频：[eval_summary.md](experiments/act_aloha/results/eval_summary.md)、[ep0](assets/act_aloha_eval_ep0.mp4)、[ep1](assets/act_aloha_eval_ep1.mp4)
 
 ## 跨环境迁移实验（MetaWorld push-v3）
 
