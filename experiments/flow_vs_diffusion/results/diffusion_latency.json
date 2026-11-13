@@ -1,0 +1,50 @@
+{
+  "checkpoint": "outputs/diffusion_baseline/checkpoints/003840/pretrained_model",
+  "rows": [
+    {
+      "algo": "diffusion_policy",
+      "infer_steps": 5,
+      "n_repeats": 20,
+      "latency_ms_mean": 48.645519465208054,
+      "latency_ms_p50": 48.23141125962138,
+      "latency_ms_p95": 49.96356894262135,
+      "latency_ms_per_denoise_step": 9.72910389304161
+    },
+    {
+      "algo": "diffusion_policy",
+      "infer_steps": 10,
+      "n_repeats": 20,
+      "latency_ms_mean": 94.53831277787685,
+      "latency_ms_p50": 94.43834470584989,
+      "latency_ms_p95": 95.15473125502467,
+      "latency_ms_per_denoise_step": 9.453831277787685
+    },
+    {
+      "algo": "diffusion_policy",
+      "infer_steps": 20,
+      "n_repeats": 20,
+      "latency_ms_mean": 186.10699465498328,
+      "latency_ms_p50": 186.0261084511876,
+      "latency_ms_p95": 186.84087614528835,
+      "latency_ms_per_denoise_step": 9.305349732749164
+    },
+    {
+      "algo": "diffusion_policy",
+      "infer_steps": 50,
+      "n_repeats": 20,
+      "latency_ms_mean": 462.63385177589953,
+      "latency_ms_p50": 463.2830126211047,
+      "latency_ms_p95": 463.9719430822879,
+      "latency_ms_per_denoise_step": 9.25267703551799
+    },
+    {
+      "algo": "diffusion_policy",
+      "infer_steps": 100,
+      "n_repeats": 20,
+      "latency_ms_mean": 919.4410433061421,
+      "latency_ms_p50": 918.1841555982828,
+      "latency_ms_p95": 923.9708994049579,
+      "latency_ms_per_denoise_step": 9.194410433061421
+    }
+  ]
+}

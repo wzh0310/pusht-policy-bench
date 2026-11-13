@@ -1,0 +1,117 @@
+{
+  "n_diffusion_pairs": 4,
+  "episode_level": {
+    "n_all_step_failure": 42,
+    "n_any_success": 8,
+    "n_step_sensitive_spread_gt_0_2": 43,
+    "mean_spread": 0.4646,
+    "success_concentration": [
+      0,
+      4,
+      9,
+      12,
+      14,
+      38,
+      39,
+      46
+    ]
+  },
+  "diffusion_pairwise": [
+    {
+      "from_steps": 5,
+      "to_steps": 10,
+      "mean_delta": 0.0831,
+      "median_delta": 0.0547,
+      "mean_abs_delta": 0.2591,
+      "success_from": 3,
+      "success_to": 1,
+      "n": 44,
+      "improved": 27,
+      "degraded": 17,
+      "p_two_sided": 0.174171
+    },
+    {
+      "from_steps": 10,
+      "to_steps": 20,
+      "mean_delta": -0.0601,
+      "median_delta": 0.0053,
+      "mean_abs_delta": 0.2505,
+      "success_from": 1,
+      "success_to": 2,
+      "n": 45,
+      "improved": 22,
+      "degraded": 23,
+      "p_two_sided": 1.0
+    },
+    {
+      "from_steps": 20,
+      "to_steps": 50,
+      "mean_delta": 0.0384,
+      "median_delta": -0.0002,
+      "mean_abs_delta": 0.2491,
+      "success_from": 2,
+      "success_to": 3,
+      "n": 41,
+      "improved": 20,
+      "degraded": 21,
+      "p_two_sided": 1.0
+    },
+    {
+      "from_steps": 10,
+      "to_steps": 50,
+      "mean_delta": -0.0217,
+      "median_delta": -0.0404,
+      "mean_abs_delta": 0.2267,
+      "success_from": 1,
+      "success_to": 3,
+      "n": 46,
+      "improved": 20,
+      "degraded": 26,
+      "p_two_sided": 0.461391
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "claim": "扩散多步采样累积误差：步数越多，同初态覆盖率系统性下降",
+      "verdict": "不支持",
+      "evidence": "10→50 步平均 Δ=-0.0217，改善 20 / 退化 26，配对符号检验双侧 p=0.461391；20→50 p=1.0，均无显著退化趋势。"
+    },
+    {
+      "id": "H2",
+      "claim": "极端分布外场景导致动作突变",
+      "verdict": "部分支持（初态主导成立，动作突变证据不足）",
+      "evidence": "42/50 个初态在四个步数档全部失败，仅 8 个初态曾成功；但三条失败轨迹的尖峰率 0.18–0.25，更多表现为「贴块微调后停滞」而非突跳。"
+    },
+    {
+      "id": "H3",
+      "claim": "流匹配单步推理细节精度普遍下降",
+      "verdict": "不支持（存在步数 × 初态交互）",
+      "evidence": "同初态 ep6：1 步覆盖 1.000 vs 10 步 0.147；ep5 反向：1 步 0.380 vs 10 步 1.000。单步在部分初态最优、在另一部分初态最差，方向不一致。"
+    },
+    {
+      "id": "H4",
+      "claim": "流匹配高速动态场景适配性不足",
+      "verdict": "部分支持（精细调整阶段高速动作有害）",
+      "evidence": "接近目标的两条轨迹高速段 Δreward 为负（1 步 ep6 -0.00082、10 步 ep6 -0.00463），而推进阶段 1 步 ep5 高速段 +0.00469 为正。"
+    },
+    {
+      "id": "H5",
+      "claim": "新增：峰值达标后无法保持，是跨算法共有的首要失效模式",
+      "verdict": "强支持",
+      "evidence": "Flow 1 步 ep6 峰值 1.000、终态 0.183、衰减 0.817；10 步 ep5 峰值 1.000、终态 0.920 仍判失败；本次录制的 6 条 Flow 轨迹无一成功，与既有基线记录的「成功即停」一致。"
+    },
+    {
+      "id": "H6",
+      "claim": "困难初态无法靠换采样步数稳定救援",
+      "verdict": "支持",
+      "evidence": "ep28：Diffusion 5/10/20/50 步峰值覆盖 [0.0, 0.568, 0.0, 0.9679]，Flow 1/10 步 0.000/0.000；Diffusion 侧 42/50 初态四档全失败。"
+    }
+  ],
+  "primary_failure_mode": "峰值达标后保持失效（动作块开环执行 + 保持行为无监督）",
+  "secondary_failure_modes": [
+    "困难初态：全档位零覆盖，步数与算法都救不了",
+    "步数 × 初态交互：同初态换步数可让覆盖率从 0.147 跳到 1.000，方向不固定",
+    "块边界不连续：开环重规划处 jerk 比普遍 >1（Diffusion 1.42–3.20，Flow 1.12–2.09）"
+  ]
+}

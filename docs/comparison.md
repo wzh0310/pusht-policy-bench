@@ -58,3 +58,17 @@ BC 每步独立采样一点 → 误差沿轨迹随机游走（累积漂移）；
 → 单步误差最小但依赖足够的采样预算（粗采样退化）与重规划频率（时序一致性）。
 对应改进分别指向：更多/更宽数据（BC）、时域结构（ACT）、采样器（Diffusion）——
 这也是三条技术路线的演化逻辑。
+
+
+## 3. 扩展：扩散 vs 流匹配定向对比
+
+三算法之外，仓库新增 Flow Matching 与 Diffusion Policy 的**核心维度定向对比**：固定数据集、
+训练预算与评估协议，量化推理步数-速度关系、训练稳定性与动作平滑度，并给出按控制周期选型的判据。
+完整报告见 [flow_vs_diffusion.md](flow_vs_diffusion.md)，原始记录与脚本见
+[experiments/flow_vs_diffusion/](../experiments/flow_vs_diffusion/RESULTS.md)。
+
+## 4. 扩展：失效边界与双臂迁移
+
+三算法横向对比之外，仓库新增 [failure_mode_analysis.md](failure_mode_analysis.md)
+（3+3 条失败轨迹逐帧对比、六个假设的配对检验）与
+[aloha_dataset_probe.md](aloha_dataset_probe.md)（ALOHA 14 维双臂数据格式、50 Hz 迁移清单）。

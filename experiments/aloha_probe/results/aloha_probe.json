@@ -1,0 +1,268 @@
+{
+  "repo_id": "lerobot/aloha_sim_insertion_human",
+  "lerobot_api": "0.7.1",
+  "num_episodes": 50,
+  "num_frames": 25000,
+  "fps": 50,
+  "features": {
+    "observation.images.top": {
+      "dtype": "video",
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "names": [
+        "height",
+        "width",
+        "channel"
+      ]
+    },
+    "observation.state": {
+      "dtype": "float32",
+      "shape": [
+        14
+      ],
+      "names": {
+        "motors": [
+          "left_waist",
+          "left_shoulder",
+          "left_elbow",
+          "left_forearm_roll",
+          "left_wrist_angle",
+          "left_wrist_rotate",
+          "left_gripper",
+          "right_waist",
+          "right_shoulder",
+          "right_elbow",
+          "right_forearm_roll",
+          "right_wrist_angle",
+          "right_wrist_rotate",
+          "right_gripper"
+        ]
+      },
+      "fps": 50.0
+    },
+    "action": {
+      "dtype": "float32",
+      "shape": [
+        14
+      ],
+      "names": {
+        "motors": [
+          "left_waist",
+          "left_shoulder",
+          "left_elbow",
+          "left_forearm_roll",
+          "left_wrist_angle",
+          "left_wrist_rotate",
+          "left_gripper",
+          "right_waist",
+          "right_shoulder",
+          "right_elbow",
+          "right_forearm_roll",
+          "right_wrist_angle",
+          "right_wrist_rotate",
+          "right_gripper"
+        ]
+      },
+      "fps": 50.0
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null,
+      "fps": 50.0
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null,
+      "fps": 50.0
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "shape": [
+        1
+      ],
+      "names": null,
+      "fps": 50.0
+    },
+    "next.done": {
+      "dtype": "bool",
+      "shape": [
+        1
+      ],
+      "names": null,
+      "fps": 50.0
+    },
+    "index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null,
+      "fps": 50.0
+    },
+    "task_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ],
+      "names": null,
+      "fps": 50.0
+    }
+  },
+  "sample_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "next.done",
+    "observation.images.top",
+    "observation.state",
+    "task",
+    "task_index",
+    "timestamp"
+  ],
+  "sample_shapes": {
+    "observation.state": {
+      "type": "tensor",
+      "shape": [
+        14
+      ],
+      "dtype": "torch.float32"
+    },
+    "action": {
+      "type": "tensor",
+      "shape": [
+        14
+      ],
+      "dtype": "torch.float32"
+    },
+    "episode_index": {
+      "type": "tensor",
+      "shape": [],
+      "dtype": "torch.int64"
+    },
+    "frame_index": {
+      "type": "tensor",
+      "shape": [],
+      "dtype": "torch.int64"
+    },
+    "timestamp": {
+      "type": "tensor",
+      "shape": [],
+      "dtype": "torch.float32"
+    },
+    "next.done": {
+      "type": "tensor",
+      "shape": [],
+      "dtype": "torch.bool"
+    },
+    "index": {
+      "type": "tensor",
+      "shape": [],
+      "dtype": "torch.int64"
+    },
+    "task_index": {
+      "type": "tensor",
+      "shape": [],
+      "dtype": "torch.int64"
+    },
+    "observation.images.top": {
+      "type": "tensor",
+      "shape": [
+        3,
+        480,
+        640
+      ],
+      "dtype": "torch.float32"
+    },
+    "task": {
+      "type": "str",
+      "value": "Insert the peg into the socket."
+    }
+  },
+  "camera_keys": [
+    "observation.images.top"
+  ],
+  "n_cameras": 1,
+  "action_dim": [
+    14
+  ],
+  "action_names": {
+    "motors": [
+      "left_waist",
+      "left_shoulder",
+      "left_elbow",
+      "left_forearm_roll",
+      "left_wrist_angle",
+      "left_wrist_rotate",
+      "left_gripper",
+      "right_waist",
+      "right_shoulder",
+      "right_elbow",
+      "right_forearm_roll",
+      "right_wrist_angle",
+      "right_wrist_rotate",
+      "right_gripper"
+    ]
+  },
+  "state_dim": [
+    14
+  ],
+  "state_names": {
+    "motors": [
+      "left_waist",
+      "left_shoulder",
+      "left_elbow",
+      "left_forearm_roll",
+      "left_wrist_angle",
+      "left_wrist_rotate",
+      "left_gripper",
+      "right_waist",
+      "right_shoulder",
+      "right_elbow",
+      "right_forearm_roll",
+      "right_wrist_angle",
+      "right_wrist_rotate",
+      "right_gripper"
+    ]
+  },
+  "episode_lengths": [
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500
+  ],
+  "tasks": [
+    "Insert the peg into the socket."
+  ],
+  "task_text": "Insert the peg into the socket.",
+  "api_notes": {
+    "observation_keys": "0.7.1 已移除；用 dataset.features 或 dataset.meta.info['features']",
+    "num_episodes": "仍可用",
+    "sample": "dataset[0] 返回 dict，图像键为 observation.images.*"
+  }
+}

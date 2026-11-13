@@ -2,13 +2,14 @@
 
 ![Python](https://img.shields.io/badge/python-3.12-blue) ![PyTorch](https://img.shields.io/badge/pytorch-2.7.1-orange) ![LeRobot](https://img.shields.io/badge/lerobot-0.7.1-8A2BE2) ![License](https://img.shields.io/badge/license-MIT-green) ![PushT Success Rate](https://img.shields.io/badge/PushT-90%25-success)
 
-模仿学习三主流方案——**BC / ACT / Diffusion Policy**——的可复现对比基准。当前覆盖
+模仿学习四条主流路线——**BC / ACT / Diffusion Policy / Flow Matching**——的可复现对比基准。当前覆盖
 PushT 平面推块任务与 MetaWorld 单臂推球，对 LeRobot 生态中的策略给出统一环境下的
 成功率、奖励、推理耗时与显存占用，并附完整消融与失效模式分析。
 
 **算法一句话**：BC 把模仿当监督学习直接回归动作（下限基线）；ACT 加动作分块 +
 CVAE（质量/延迟均衡解）；Diffusion Policy 用迭代去噪生成动作块（质量上限，推理成本
-随采样步数线性增长，需 DDIM 裁剪）。
+随采样步数线性增长，需 DDIM 裁剪）；Flow Matching 直接回归直线路径的速度场（少步数、
+确定性、训练更稳，见 [定向对比实验](docs/flow_vs_diffusion.md)）。
 
 ![PushT 成功案例](assets/demo_success.gif)
 
@@ -43,6 +44,51 @@ PushT 是视觉运动模仿学习最常用的基准任务之一：用圆形夹�
 测试环境：NVIDIA RTX A6000 / driver 550.107.02 / CUDA 12.6 / PyTorch 2.7.1 / LeRobot 0.7.1 / Python 3.12。
 
 失败样例见 [assets/demo_failure.mp4](assets/demo_failure.mp4)：该 episode 末帧覆盖率停在 0.63，夹爪在目标区边缘来回修正后超时。
+
+## 核心维度定向对比：扩散 vs 流匹配
+
+> 作品集重点：固定数据集、训练预算、评估协议，只对比「推理速度-步数关系」与「训练稳定性」两个核心维度，
+> 另补动作平滑度分析。完整报告 [docs/flow_vs_diffusion.md](docs/flow_vs_diffusion.md)，
+> 原始记录与可复现脚本 [experiments/flow_vs_diffusion/](experiments/flow_vs_diffusion/RESULTS.md)。
+
+![推理步数消融：延迟与峰值覆盖率](assets/flow_vs_diffusion_ablation.png)
+
+| 算法 / 步数 | 成功率 (50ep) | 峰值覆盖率 | sumR | 每次重规划 |
+|---|---:|---:|---:|---:|
+| **Flow 1** | **4.0%** | **0.727** | **92.6** | **2.67 ms** |
+| Flow 10 | 0.0% | 0.549 | 71.9 | 7.76 ms |
+| Diffusion 10 | 2.0% | 0.682 | 73.9 | 94.54 ms |
+| Diffusion 50 | 6.0% | 0.661 | 79.9 | 462.63 ms |
+
+**三个结论**：① 流匹配 1 步反而最优——直线插值下速度场理论为常数，多步 Euler 会累积中间时刻的拟合误差；
+② 延迟严格线性（`Flow ≈ 2.13+0.567N` ms、`Diffusion ≈ 3.01+9.169N` ms），单步成本差 **16.2×**，
+Flow 1 步比 Diffusion 10 步快 35.4×；③ 训练稳定性 Flow 更稳（CV 0.147 vs 0.310，劣化 1.42× vs 2.15×），
+但既有基线质量更低——**稳定 ≠ 更强**。
+
+**选型判据**：重规划预算 < 10 ms 只能 Flow；> 100 ms 且质量 / 多模态优先选 Diffusion 10–20 步。
+50ep 下各组成功率 Wilson 95% CI 全部重叠，**不能用成功率排序**，应看峰值覆盖率、sumR 与延迟。
+
+## 失效模式对比 + ALOHA 双臂数据集探查
+
+> 从原理层面找两种算法的**失效边界**，并为下周双臂迁移做准备。
+> 完整笔记：[失败模式分析](docs/failure_mode_analysis.md) ｜ [ALOHA 数据探查](docs/aloha_dataset_probe.md)；
+> 抽帧图与 9 条回放见 [assets/](assets/)。
+
+| 待检验说法 | 判定 |
+|---|---|
+| 扩散多步采样累积误差 | **不支持**（10→50 步配对符号检验 p=0.461） |
+| 扩散 OOD 场景动作突变 | **部分支持**（42/50 初态四档全失败，但画面多为停滞而非突跳） |
+| 流匹配单步精度普遍下降 | **不支持**（同初态 1 步 1.000 vs 10 步 0.147，另一个初态恰好反向） |
+| 流匹配高速动态适配差 | **部分支持**（高速动作在精修阶段有害，在推进阶段有益） |
+| **峰值达标后无法保持** | **强支持**：两条轨迹覆盖率到 1.000 后又被推走，终态最低掉到 0.183 |
+
+**结论**：步数是与初态交互的旋钮，不是误差源；首要失效来自「动作块开环执行 + 示范数据没有保持监督」，
+换算法救不了，要在数据/执行层加终止判断与闭环冻结。[逐帧量化表](experiments/failure_modes/results/failure_table.md)
+
+**ALOHA 双臂探查**：`lerobot/aloha_sim_insertion_human` 加载成功，**50 集 / 25000 帧 / 50 fps**，
+动作与状态同为 **14 维关节角**（左右臂各 6 关节 + 1 夹爪），观测**只有一路 top 相机**（480×640，非多视角），
+任务为双臂插销入孔。50 Hz 控制把重规划预算压到 20 ms，只有 Flow 1–3 步可用；
+插销任务又恰好要求「到位后保持」——正是上面那个主要失效模式。[迁移清单](docs/aloha_dataset_probe.md)
 
 ## 从零实现的 BC 基线
 
@@ -91,6 +137,10 @@ BC 在此任务上的已知缺陷与对应改进路线（完整推导见 [docs/t
 - [demo_success.gif](assets/demo_success.gif)：官方权重 90% 成功率参考
 - [demo_failure.mp4](assets/demo_failure.mp4)：官方权重失败样例
 
+**Flow Matching**
+- [flow_1step_best.gif](assets/flow_1step_best.gif)：1 步 Euler 最佳轨迹（峰值覆盖率 0.727）
+- [flow_vs_diffusion_smoothness.jpg](assets/flow_vs_diffusion_smoothness.jpg)：与 Diffusion 的抽帧平滑度对比
+
 **跨环境迁移（MetaWorld push-v3）**
 - [metaworld_v2_best.gif](assets/metaworld_v2_best.gif)：ACT 迁移——"悬停不接触"过拟合失效
 
@@ -98,7 +148,11 @@ BC 在此任务上的已知缺陷与对应改进路线（完整推导见 [docs/t
 
 完整结论汇总（基线对比、消融量化、失效模式分析）见 [docs/REPORT.md](docs/REPORT.md)；
 三算法全维度对比与失效模式深度分析见 [docs/comparison.md](docs/comparison.md)；
-选型建议速查见 REPORT 第 8 节；常见问答见 [docs/faq.md](docs/faq.md)。
+选型建议速查见 REPORT 第 8 节；常见问答见 [docs/faq.md](docs/faq.md)；
+扩散 vs 流匹配核心维度定向对比（步数消融、训练稳定性、动作平滑度、选型判据）见
+[docs/flow_vs_diffusion.md](docs/flow_vs_diffusion.md)；
+失败模式逐帧对比与双臂迁移准备见 [docs/failure_mode_analysis.md](docs/failure_mode_analysis.md)、
+[docs/aloha_dataset_probe.md](docs/aloha_dataset_probe.md)。
 
 ## 这个仓库解决什么
 
@@ -127,7 +181,7 @@ python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 bash scripts/eval_pusht.sh
 ```
 
-无显示器的服务器需要离屏渲染，脚本已内置：
+无显示器的环境需要离屏渲染，脚本已内置：
 
 ```bash
 export MUJOCO_GL=egl
@@ -146,7 +200,10 @@ export PYOPENGL_PLATFORM=egl
 │   └── flow/                 # 最小 Flow Matching 动作头实现（对照 Diffusion）
 ├── experiments/
 │   ├── bc_baseline/          # BC 20 epoch 训练日志与复现脚本
-│   └── act_warmup/           # ACT 1000 步预热训练日志与复现脚本
+│   ├── act_warmup/           # ACT 1000 步预热训练日志与复现脚本
+│   ├── flow_vs_diffusion/    # 扩散 vs 流匹配定向对比：10 个脚本 + 全量结果 + RESULTS.md
+│   ├── failure_modes/        # 失败轨迹逐帧分析：3+3 条回放 + 假设检验
+│   └── aloha_probe/          # ALOHA 双臂数据格式探查与迁移清单
 ├── docs/
 │   ├── environment.md        # 环境方案对比与环境自检
 │   ├── results.md            # 评测方法、逐 episode 明细、耗时分解
@@ -156,11 +213,14 @@ export PYOPENGL_PLATFORM=egl
 │   ├── comparison.md         # 三算法全维度对比 + 失效模式深度分析（含回放）
 │   ├── diffusion_notes.md    # Diffusion Policy 源码拆解（架构图/形状实测/超参调参方向）
 │   ├── flow_notes.md         # Flow Policy（流匹配）与 Diffusion 的结构差异 + 实测
+│   ├── flow_vs_diffusion.md  # 扩散 vs 流匹配定向对比（步数消融 / 稳定性 / 选型）
+│   ├── failure_mode_analysis.md # 失败模式逐帧对比与失效边界
+│   ├── aloha_dataset_probe.md # ALOHA 双臂数据格式与迁移清单
 │   └── faq.md                # 高频问答（全部答案带实测数据）
 ├── scripts/
 │   ├── eval_pusht.sh       # 评测流水线（含 GPU 预检）
 │   └── train_pusht.sh      # 训练流水线（支持冒烟参数）
-└── assets/                 # 回放录像与 GIF
+└── assets/                 # 回放录像与 GIF、对比图表、失败轨迹抽帧
 ```
 
 ## 关键发现

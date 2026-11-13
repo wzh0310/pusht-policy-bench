@@ -52,3 +52,17 @@ Flow 2%（1/50）vs Diffusion 6%（3/50）；Flow 以 1/500 参数、1/10 显存
 - 需要低延迟、确定性、快速收敛 → Flow（π0/GR00T 的选择）；
 - 两者共享"迭代精修动作块"的失效模式：到位后保持、开环块内纠偏，
   缓解方式相同（缩短执行步数、增加重规划频率）。
+
+
+## 5. 定向对比实验（推理步数消融）
+
+Flow 的推理步数不是越多越好：实测 1 步 Euler 反而优于 10 步（峰值覆盖率 0.727 vs 0.549），
+单步成本 0.567 ms 是 Diffusion 的 1/16。完整步数消融、训练稳定性量化、动作平滑度与选型判据见
+[docs/flow_vs_diffusion.md](flow_vs_diffusion.md) 与
+[experiments/flow_vs_diffusion/](../experiments/flow_vs_diffusion/RESULTS.md)。
+
+## 6. 失效模式与双臂迁移
+
+Flow 1 步为何在部分初态满分、另一些初态几乎不动，见
+[failure_mode_analysis.md](failure_mode_analysis.md) 的同种子 1/10 步对照；
+14 维双臂动作空间与 50 Hz 预算对 Flow 的影响见 [aloha_dataset_probe.md](aloha_dataset_probe.md)。

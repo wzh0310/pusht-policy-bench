@@ -1,0 +1,33 @@
+{
+  "summary": {
+    "algo": "flow_matching",
+    "infer_steps": 10,
+    "checkpoint": "bc/outputs/flow/checkpoint.pt",
+    "n_episodes": 2,
+    "seed": 1000,
+    "horizon": 8,
+    "n_success": 0,
+    "pc_success": 0.0,
+    "avg_max_reward": 0.2516713429398536,
+    "avg_sum_reward": 8.560405731580504,
+    "n_replans": 76,
+    "latency_ms_mean": 8.362660539875689,
+    "latency_ms_p50": 8.200670126825571,
+    "latency_ms_p95": 9.88342915661633,
+    "latency_ms_per_euler_step": 0.8362660539875689
+  },
+  "per_episode": [
+    {
+      "episode": 0,
+      "sum_reward": 17.120811463161008,
+      "max_reward": 0.5033426858797072,
+      "success": false
+    },
+    {
+      "episode": 1,
+      "sum_reward": 0.0,
+      "max_reward": 0.0,
+      "success": false
+    }
+  ]
+}

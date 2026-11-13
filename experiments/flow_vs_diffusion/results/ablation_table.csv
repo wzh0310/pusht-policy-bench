@@ -1,0 +1,8 @@
+﻿algo,infer_steps,n_episodes,n_success,success_pct,success_ci95,peak_coverage,avg_sum_reward,replan_ms,per_step_ms,latency_source,quality_source
+Flow Matching,1,50,2,4.0,1.1-13.5,0.727,92.6,2.67,2.665,闭环评估内 model.sample() GPU 同步实测,本次消融 50ep x 300 步
+Flow Matching,3,50,0,0.0,0.0-7.1,0.471,63.3,3.78,1.261,闭环评估内 model.sample() GPU 同步实测,本次消融 50ep x 300 步
+Flow Matching,5,50,0,0.0,0.0-7.1,0.531,72.3,5.1,1.02,闭环评估内 model.sample() GPU 同步实测,本次消融 50ep x 300 步
+Flow Matching,10,50,0,0.0,0.0-7.1,0.549,71.9,7.76,0.776,闭环评估内 model.sample() GPU 同步实测,本次消融 50ep x 300 步
+Diffusion Policy,10,50,1,2.0,0.4-10.5,0.682,73.9,94.54,9.454,同机 batch=1 微基准（20 次重复）,既有步数消融 50ep x 300 步
+Diffusion Policy,20,50,2,4.0,1.1-13.5,0.622,74.0,186.11,9.305,同机 batch=1 微基准（20 次重复）,既有步数消融 50ep x 300 步
+Diffusion Policy,50,50,3,6.0,2.1-16.2,0.661,79.9,462.63,9.253,同机 batch=1 微基准（20 次重复）,既有步数消融 50ep x 300 步

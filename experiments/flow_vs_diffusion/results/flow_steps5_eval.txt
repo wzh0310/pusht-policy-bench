@@ -1,0 +1,67 @@
+[steps=5] ep 00 success=False max_r=0.471 sum=12.5
+[steps=5] ep 01 success=False max_r=0.000 sum=0.0
+[steps=5] ep 02 success=False max_r=0.062 sum=0.4
+[steps=5] ep 03 success=False max_r=1.000 sum=196.0
+[steps=5] ep 04 success=False max_r=0.141 sum=1.5
+[steps=5] ep 05 success=False max_r=1.000 sum=125.2
+[steps=5] ep 06 success=False max_r=0.986 sum=115.9
+[steps=5] ep 07 success=False max_r=0.995 sum=141.9
+[steps=5] ep 08 success=False max_r=0.962 sum=172.8
+[steps=5] ep 09 success=False max_r=0.964 sum=160.8
+[steps=5] ep 10 success=False max_r=0.410 sum=14.3
+[steps=5] ep 11 success=False max_r=0.048 sum=0.5
+[steps=5] ep 12 success=False max_r=0.964 sum=97.6
+[steps=5] ep 13 success=False max_r=0.192 sum=46.7
+[steps=5] ep 14 success=False max_r=0.185 sum=7.2
+[steps=5] ep 15 success=False max_r=0.922 sum=148.5
+[steps=5] ep 16 success=False max_r=0.362 sum=8.4
+[steps=5] ep 17 success=False max_r=0.811 sum=91.3
+[steps=5] ep 18 success=False max_r=0.096 sum=24.3
+[steps=5] ep 19 success=False max_r=0.970 sum=108.0
+[steps=5] ep 20 success=False max_r=0.390 sum=7.9
+[steps=5] ep 21 success=False max_r=0.160 sum=28.7
+[steps=5] ep 22 success=False max_r=0.633 sum=90.2
+[steps=5] ep 23 success=False max_r=0.072 sum=1.1
+[steps=5] ep 24 success=False max_r=0.000 sum=0.0
+[steps=5] ep 25 success=False max_r=0.528 sum=102.0
+[steps=5] ep 26 success=False max_r=0.548 sum=114.0
+[steps=5] ep 27 success=False max_r=1.000 sum=113.8
+[steps=5] ep 28 success=False max_r=0.000 sum=0.0
+[steps=5] ep 29 success=False max_r=0.157 sum=1.9
+[steps=5] ep 30 success=False max_r=0.000 sum=0.0
+[steps=5] ep 31 success=False max_r=1.000 sum=180.3
+[steps=5] ep 32 success=False max_r=0.101 sum=2.0
+[steps=5] ep 33 success=False max_r=0.013 sum=0.1
+[steps=5] ep 34 success=False max_r=0.131 sum=1.6
+[steps=5] ep 35 success=False max_r=0.935 sum=68.4
+[steps=5] ep 36 success=False max_r=0.000 sum=0.0
+[steps=5] ep 37 success=False max_r=0.999 sum=167.5
+[steps=5] ep 38 success=False max_r=0.242 sum=21.7
+[steps=5] ep 39 success=False max_r=0.990 sum=213.8
+[steps=5] ep 40 success=False max_r=0.191 sum=49.5
+[steps=5] ep 41 success=False max_r=0.544 sum=112.7
+[steps=5] ep 42 success=False max_r=0.988 sum=67.7
+[steps=5] ep 43 success=False max_r=0.926 sum=159.1
+[steps=5] ep 44 success=False max_r=0.964 sum=116.0
+[steps=5] ep 45 success=False max_r=0.981 sum=185.2
+[steps=5] ep 46 success=False max_r=1.000 sum=167.8
+[steps=5] ep 47 success=False max_r=0.400 sum=10.2
+[steps=5] ep 48 success=False max_r=0.130 sum=3.4
+[steps=5] ep 49 success=False max_r=0.995 sum=154.2
+{
+  "algo": "flow_matching",
+  "infer_steps": 5,
+  "checkpoint": "bc/outputs/flow/checkpoint.pt",
+  "n_episodes": 50,
+  "seed": 1000,
+  "horizon": 8,
+  "n_success": 0,
+  "pc_success": 0.0,
+  "avg_max_reward": 0.5312000264480387,
+  "avg_sum_reward": 72.28783865439904,
+  "n_replans": 1900,
+  "latency_ms_mean": 5.101855392812898,
+  "latency_ms_p50": 4.959558602422476,
+  "latency_ms_p95": 5.825008498504758,
+  "latency_ms_per_euler_step": 1.0203710785625797
+}

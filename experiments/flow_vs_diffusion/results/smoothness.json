@@ -1,0 +1,67 @@
+{
+  "flow_matching_1step": {
+    "n_frames": 300,
+    "chunk_size": 8,
+    "motion_mean": 0.7650744318962097,
+    "motion_std": 0.3517291843891144,
+    "accel_abs_mean": 0.21984203159809113,
+    "jerk_abs_mean": 0.33606624603271484,
+    "jerk_p95": 0.848288893699646,
+    "spike_ratio_gt3x_median": 0.08417508417508418,
+    "boundary_jerk_mean": 0.367657333612442,
+    "inner_jerk_mean": 0.3315706253051758,
+    "boundary_over_inner": 1.1088356614041193
+  },
+  "diffusion_policy_success": {
+    "n_frames": 118,
+    "chunk_size": 32,
+    "motion_mean": 0.895021378993988,
+    "motion_std": 0.302703857421875,
+    "accel_abs_mean": 0.33814918994903564,
+    "jerk_abs_mean": 0.6656979918479919,
+    "jerk_p95": 1.3460429906845093,
+    "spike_ratio_gt3x_median": 0.0,
+    "boundary_jerk_mean": 0.7658462524414062,
+    "inner_jerk_mean": 0.6630154848098755,
+    "boundary_over_inner": 1.1550955746697504
+  },
+  "flow_action_space": {
+    "n_actions": 300,
+    "action_vel_norm_mean": 14.948565537634968,
+    "action_accel_norm_mean": 22.027177999106623,
+    "action_jerk_norm_mean": 38.6505630897851,
+    "action_jerk_norm_p95": 82.1875964379679
+  },
+  "aligned_prefix": {
+    "n_frames": 118,
+    "by_algo": {
+      "flow_matching_1step": {
+        "n_frames": 118,
+        "chunk_size": 8,
+        "motion_mean": 0.9795433282852173,
+        "motion_std": 0.3490309417247772,
+        "accel_abs_mean": 0.27043676376342773,
+        "jerk_abs_mean": 0.42190423607826233,
+        "jerk_p95": 0.9287693500518799,
+        "spike_ratio_gt3x_median": 0.008695652173913044,
+        "boundary_jerk_mean": 0.5206696391105652,
+        "inner_jerk_mean": 0.4082140028476715,
+        "boundary_over_inner": 1.27548206450149
+      },
+      "diffusion_policy_success": {
+        "n_frames": 118,
+        "chunk_size": 32,
+        "motion_mean": 0.895021378993988,
+        "motion_std": 0.302703857421875,
+        "accel_abs_mean": 0.33814918994903564,
+        "jerk_abs_mean": 0.6656979918479919,
+        "jerk_p95": 1.3460429906845093,
+        "spike_ratio_gt3x_median": 0.0,
+        "boundary_jerk_mean": 0.7658462524414062,
+        "inner_jerk_mean": 0.6630154848098755,
+        "boundary_over_inner": 1.1550955746697504
+      }
+    },
+    "note": "两视频截取相同长度的前缀（轨迹起始段），消除片长与静止尾段差异"
+  }
+}
