@@ -32,6 +32,17 @@ lerobot 生态**——本 fork 与上游 main（v0.7.1）均无 `so101` 环境�
   图像 480×480，state=4 维 agent_pos，action=4 维 xyz+gripper）。
 - v1 快速训练：3000 步（batch 32，≈16 epoch），eval_loss 0.423→0.094，显存 4.5 GB。
 - v2 完整训练：20000 步（见 train_log_v2.txt）。
+**完整训练曲线**：由 [plot_train_curves.py](scripts/plot_train_curves.py) 从两份日志自动解析
+（数值见 [train_curves.json](results/train_curves.json)），
+![ACT/MetaWorld 训练曲线](../../assets/act_metaworld_train_curves.png)
+
+| 版本 | 记录点 | 首 / 末 eval_loss | 最优 | 降幅 |
+|---|---:|---|---:|---:|
+| v1（3000 步） | 10 | 0.3039 → 0.0937 | 0.0937 @ 3000 | 69.17% |
+| v2（20000 步） | 20 | 0.1458 → 0.0611 | 0.0585 @ 19000 | 58.09% |
+
+v2 离线 loss 更低但在线成功率反而劣化（见下），离线指标与闭环表现脱钩的又一例证。
+
 
 ## 评估结果（20 episodes × 400 步，自研闭环脚本）
 

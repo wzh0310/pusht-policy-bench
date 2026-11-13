@@ -1,0 +1,241 @@
+{
+  "experiment": "phase2_acceptance",
+  "runs": [
+    {
+      "label": "BC v2 (50ep)",
+      "algorithm": "BC",
+      "env": "PushT-v0",
+      "engine": "pymunk",
+      "result_file": "experiments/bc_baseline/eval_results_v2_50ep.json",
+      "n_episodes": 50,
+      "n_success": 5,
+      "pc_success": 10.0,
+      "avg_sum_reward": 95.24,
+      "avg_max_reward": 0.542,
+      "eval_protocol": "50ep",
+      "train_curve": "baselines/bc + train_log_v2.txt",
+      "train_log": "experiments/bc_baseline/train_log_v2.txt",
+      "loss_records": 401
+    },
+    {
+      "label": "ACT v3 (50k 步)",
+      "algorithm": "ACT",
+      "env": "PushT-v0",
+      "engine": "pymunk",
+      "result_file": "experiments/act_v3/eval_info.json",
+      "n_episodes": 50,
+      "n_success": 7,
+      "pc_success": 14.0,
+      "avg_sum_reward": 61.67,
+      "avg_max_reward": 0.613,
+      "eval_protocol": "50ep",
+      "train_curve": "train_log.txt / assets/loss_curves.png",
+      "train_log": "experiments/act_v3/train_log.txt",
+      "loss_records": 31
+    },
+    {
+      "label": "Diffusion baseline",
+      "algorithm": "Diffusion",
+      "env": "PushT-v0",
+      "engine": "pymunk",
+      "result_file": "experiments/diffusion_baseline/eval_info.json",
+      "n_episodes": 50,
+      "n_success": 3,
+      "pc_success": 6.0,
+      "avg_sum_reward": 79.55,
+      "avg_max_reward": 0.67,
+      "eval_protocol": "50ep",
+      "train_curve": "train_log.txt / assets/summary_chart.png",
+      "train_log": "experiments/diffusion_baseline/train_log.txt",
+      "loss_records": 20
+    },
+    {
+      "label": "Flow baseline",
+      "algorithm": "Flow Matching",
+      "env": "PushT-v0",
+      "engine": "pymunk",
+      "result_file": "experiments/flow_baseline/eval_results.json",
+      "n_episodes": 50,
+      "n_success": 1,
+      "pc_success": 2.0,
+      "avg_sum_reward": 65.3,
+      "avg_max_reward": 0.534,
+      "eval_protocol": "50ep",
+      "train_curve": "train_log.txt（20 epoch + step 级 loss）",
+      "train_log": "experiments/flow_baseline/train_log.txt",
+      "loss_records": 97
+    },
+    {
+      "label": "ACT MetaWorld v1",
+      "algorithm": "ACT",
+      "env": "MetaWorld push-v3",
+      "engine": "MuJoCo",
+      "result_file": "experiments/act_metaworld/eval_results_v1_3k.json",
+      "n_episodes": 20,
+      "n_success": 0,
+      "pc_success": 0.0,
+      "avg_sum_reward": 22.18,
+      "avg_max_reward": 0.513,
+      "eval_protocol": "20ep x 400 steps",
+      "train_curve": "assets/act_metaworld_train_curves.png (10 点)",
+      "train_log": "experiments/act_metaworld/train_log_v1.txt",
+      "loss_records": 10
+    },
+    {
+      "label": "ACT MetaWorld v2",
+      "algorithm": "ACT",
+      "env": "MetaWorld push-v3",
+      "engine": "MuJoCo",
+      "result_file": "experiments/act_metaworld/eval_results_v2.json",
+      "n_episodes": 20,
+      "n_success": 0,
+      "pc_success": 0.0,
+      "avg_sum_reward": 19.95,
+      "avg_max_reward": 0.477,
+      "eval_protocol": "20ep x 400 steps",
+      "train_curve": "assets/act_metaworld_train_curves.png (20 点)",
+      "train_log": "experiments/act_metaworld/train_log_v2.txt",
+      "loss_records": 20
+    },
+    {
+      "label": "ACT ALOHA",
+      "algorithm": "ACT",
+      "env": "ALOHA AlohaInsertion-v0",
+      "engine": "MuJoCo",
+      "result_file": "experiments/act_aloha/results/eval_metrics.json",
+      "n_episodes": 5,
+      "n_success": 0,
+      "pc_success": 0.0,
+      "avg_sum_reward": 11.4,
+      "avg_max_reward": 0.4,
+      "eval_protocol": "5ep x 400 steps",
+      "train_curve": "assets/act_aloha_loss.png (前 900 步)",
+      "train_log": "experiments/act_aloha/results/train_log_excerpt.txt",
+      "loss_records": 9
+    }
+  ],
+  "ablations": [
+    {
+      "tag": "A1",
+      "title": "ACT chunk_size 消融 (1 / 10 / 30)",
+      "evidence": "experiments/act_ablation/RESULTS.md",
+      "finding": "chunk=1 成功率归零，chunk=10 最优 18%",
+      "evidence_exists": true
+    },
+    {
+      "tag": "A2",
+      "title": "ACT CVAE 消融 (use_vae true / false)",
+      "evidence": "experiments/act_ablation/RESULTS.md",
+      "finding": "关闭 CVAE 成功率 14%→6%，峰值覆盖率反升",
+      "evidence_exists": true
+    },
+    {
+      "tag": "A3",
+      "title": "Diffusion 推理采样步数消融 (DDIM5 / DDIM20 / DDPM100)",
+      "evidence": "experiments/diffusion_inference_steps/RESULTS.md",
+      "finding": "5 步 DDIM 追平 100 步，重规划 51ms vs 1235ms",
+      "evidence_exists": true
+    },
+    {
+      "tag": "A4",
+      "title": "扩散 vs 流匹配 步数消融 (7 档)",
+      "evidence": "experiments/flow_vs_diffusion/results/ablation_table.md",
+      "finding": "Flow 1 步 2.67ms / 覆盖率 0.727；Diffusion 10–50 步 95–463ms",
+      "evidence_exists": true
+    },
+    {
+      "tag": "A5",
+      "title": "训练稳定性对比 (loss CV)",
+      "evidence": "experiments/flow_vs_diffusion/results/stability.json",
+      "finding": "Flow CV 0.147 vs Diffusion 0.310",
+      "evidence_exists": true
+    },
+    {
+      "tag": "A6",
+      "title": "动作平滑度对比 (jerk / 块边界)",
+      "evidence": "experiments/flow_vs_diffusion/results/smoothness.json",
+      "finding": "jerk 0.422 vs 0.666，均无高频颤动",
+      "evidence_exists": true
+    },
+    {
+      "tag": "A7",
+      "title": "四算法同协议基线对比 (7680 步)",
+      "evidence": "experiments/flow_baseline/RESULTS.md",
+      "finding": "Diffusion 6% > Flow 2% > ACT/BC 0%",
+      "evidence_exists": true
+    },
+    {
+      "tag": "A8",
+      "title": "训练量扩展对比 (BC v1→v2 / ACT v1→v2→v3)",
+      "evidence": "experiments/act_v3/RESULTS.md",
+      "finding": "ACT 0%→5%→8%→14%，eval_loss 几乎不变",
+      "evidence_exists": true
+    },
+    {
+      "tag": "A9",
+      "title": "失效模式 50ep 配对假设检验 (H1–H6)",
+      "evidence": "experiments/failure_modes/results/failure_summary.json",
+      "finding": "H1/H3 不支持、H5 强支持",
+      "evidence_exists": true
+    }
+  ],
+  "failure_evidence": [
+    {
+      "title": "生成式动作头失效模式逐帧对比（3+3 轨迹、6 假设）",
+      "doc": "docs/failure_mode_analysis.md",
+      "extra": "experiments/failure_modes/",
+      "doc_exists": true
+    },
+    {
+      "title": "三算法失效模式深度分析",
+      "doc": "docs/comparison.md",
+      "extra": "assets/diffusion_nearmiss.gif",
+      "doc_exists": true
+    },
+    {
+      "title": "11 条真实故障归因库",
+      "doc": "docs/findings.md",
+      "extra": "assets/demo_failure.mp4",
+      "doc_exists": true
+    },
+    {
+      "title": "ACT 消融四类失效画像",
+      "doc": "experiments/act_ablation/RESULTS.md",
+      "extra": "assets/ablation_chunk1_best_effort.gif",
+      "doc_exists": true
+    },
+    {
+      "title": "跨环境过拟合失效（悬停不接触 / 全零对照）",
+      "doc": "experiments/act_metaworld/RESULTS.md",
+      "extra": "experiments/act_aloha/results/eval_summary.md",
+      "doc_exists": true
+    }
+  ],
+  "verdict": {
+    "criterion_1": {
+      "text": "3 个算法在 2 个以上 MuJoCo 环境跑通，有完整训练曲线和成功率指标",
+      "mujoco_env_count": 2,
+      "mujoco_algos": [
+        "ACT"
+      ],
+      "mujoco_algo_count": 1,
+      "strict_pass": false,
+      "status": "部分达标"
+    },
+    "criterion_2": {
+      "text": "至少 5 组消融 / 对比实验，有失败案例分析",
+      "ablation_count": 9,
+      "failure_evidence_count": 5,
+      "status": "通过"
+    },
+    "criterion_3": {
+      "text": "GitHub README 清晰，包含环境搭建、复现步骤、实验结果、demo 视频链接",
+      "env_setup": true,
+      "repro": true,
+      "results": true,
+      "demo_video_links": 17,
+      "demo_links_ok": true,
+      "status": "通过"
+    }
+  }
+}

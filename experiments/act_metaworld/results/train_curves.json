@@ -1,0 +1,156 @@
+{
+  "experiment": "act_metaworld_train_curves",
+  "env": "MetaWorld push-v3 (MuJoCo)",
+  "metric": "eval_loss (每 300 步 v1 / 每 1000 步 v2)",
+  "source_logs": [
+    "experiments/act_metaworld/train_log_v1.txt",
+    "experiments/act_metaworld/train_log_v2.txt"
+  ],
+  "figure": "assets/act_metaworld_train_curves.png",
+  "versions": {
+    "v1": {
+      "label": "v1 (3000 steps)",
+      "n_points": 10,
+      "last_step": 3000,
+      "loss_first": 0.3039,
+      "loss_last": 0.0937,
+      "loss_min": 0.0937,
+      "loss_min_step": 3000,
+      "reduction_pct": 69.17,
+      "points": [
+        {
+          "step": 300,
+          "eval_loss": 0.3039
+        },
+        {
+          "step": 600,
+          "eval_loss": 0.1931
+        },
+        {
+          "step": 900,
+          "eval_loss": 0.1617
+        },
+        {
+          "step": 1200,
+          "eval_loss": 0.1452
+        },
+        {
+          "step": 1500,
+          "eval_loss": 0.1185
+        },
+        {
+          "step": 1800,
+          "eval_loss": 0.1153
+        },
+        {
+          "step": 2100,
+          "eval_loss": 0.1129
+        },
+        {
+          "step": 2400,
+          "eval_loss": 0.1014
+        },
+        {
+          "step": 2700,
+          "eval_loss": 0.0947
+        },
+        {
+          "step": 3000,
+          "eval_loss": 0.0937
+        }
+      ]
+    },
+    "v2": {
+      "label": "v2 (20000 steps)",
+      "n_points": 20,
+      "last_step": 20000,
+      "loss_first": 0.1458,
+      "loss_last": 0.0611,
+      "loss_min": 0.0585,
+      "loss_min_step": 19000,
+      "reduction_pct": 58.09,
+      "points": [
+        {
+          "step": 1000,
+          "eval_loss": 0.1458
+        },
+        {
+          "step": 2000,
+          "eval_loss": 0.1125
+        },
+        {
+          "step": 3000,
+          "eval_loss": 0.0967
+        },
+        {
+          "step": 4000,
+          "eval_loss": 0.106
+        },
+        {
+          "step": 5000,
+          "eval_loss": 0.0949
+        },
+        {
+          "step": 6000,
+          "eval_loss": 0.0878
+        },
+        {
+          "step": 7000,
+          "eval_loss": 0.0782
+        },
+        {
+          "step": 8000,
+          "eval_loss": 0.0825
+        },
+        {
+          "step": 9000,
+          "eval_loss": 0.0757
+        },
+        {
+          "step": 10000,
+          "eval_loss": 0.0746
+        },
+        {
+          "step": 11000,
+          "eval_loss": 0.0686
+        },
+        {
+          "step": 12000,
+          "eval_loss": 0.0673
+        },
+        {
+          "step": 13000,
+          "eval_loss": 0.0645
+        },
+        {
+          "step": 14000,
+          "eval_loss": 0.0692
+        },
+        {
+          "step": 15000,
+          "eval_loss": 0.0633
+        },
+        {
+          "step": 16000,
+          "eval_loss": 0.0632
+        },
+        {
+          "step": 17000,
+          "eval_loss": 0.0635
+        },
+        {
+          "step": 18000,
+          "eval_loss": 0.0618
+        },
+        {
+          "step": 19000,
+          "eval_loss": 0.0585
+        },
+        {
+          "step": 20000,
+          "eval_loss": 0.0611
+        }
+      ]
+    }
+  }
+}

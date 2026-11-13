@@ -45,6 +45,92 @@ PushT 是视觉运动模仿学习最常用的基准任务之一：用圆形夹�
 
 失败样例见 [assets/demo_failure.mp4](assets/demo_failure.mp4)：该 episode 末帧覆盖率停在 0.63，夹爪在目标区边缘来回修正后超时。
 
+## 第二阶段验收：环境搭建 / 复现 / 结果 / Demo
+
+> 对照「3 算法 × 2+ MuJoCo 环境、≥5 组消融、README 四要素」三条标准的自检入口。
+> 完整判定与算法 × 环境覆盖矩阵（数值由结果 JSON 自动生成）见
+> [docs/phase2_acceptance.md](docs/phase2_acceptance.md)。
+> **诚实结论**：第 2、3 条通过；第 1 条**部分达标** —— MuJoCo 环境有 2 个
+> （MetaWorld push-v3、ALOHA），但这两个环境上目前只跑通 ACT 一个算法，
+> BC / Diffusion / Flow 仅在 PushT（pymunk 引擎）上，详见报告第 3 节。
+
+### 环境搭建
+
+基础环境（PushT 评测与四算法基线）：
+
+```bash
+conda create -n lerobot python=3.12 -y && conda activate lerobot
+git clone https://github.com/huggingface/lerobot.git && cd lerobot
+pip install -e ".[training]"
+pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu126
+python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+```
+
+MuJoCo 类环境还需锚定依赖版本（否则会踩 `flex_bandwidth` / `eq_data` 两类结构体错配）：
+
+| 环境 | 关键依赖 | 说明 |
+|---|---|---|
+| ALOHA `AlohaInsertion-v0` | `mujoco 3.8.1` + `dm-control 1.0.41` + `gym-aloha 0.1.5` | 三者约束交集唯一是 3.8.1，见 [act_aloha_transfer.md](docs/act_aloha_transfer.md) 第 6 节 |
+| MetaWorld `push-v3` | `metaworld 3.0.0` + `mujoco` | 已在 3.8.1 下验证 reset/rollout 正常，见 [act_metaworld/RESULTS.md](experiments/act_metaworld/RESULTS.md) |
+
+无显示器时统一开启离屏渲染（脚本已内置）：
+
+```bash
+export MUJOCO_GL=egl
+export PYOPENGL_PLATFORM=egl
+```
+
+### 复现步骤
+
+数据集缓存到 `<workspace-root>/datasets/`，训练/评估产物写到 `<workspace-root>/outputs/`；
+用 `WZH_ROOT` 指向工作区即可（不设置时脚本默认取仓库上级目录）：
+
+```bash
+# 官方权重 PushT 评测（导出视频）
+bash scripts/eval_pusht.sh
+
+# ACT 迁移 ALOHA：训练 → 解析曲线 → 闭环评估 → 解析指标
+WZH_ROOT=<workspace-root> bash experiments/act_aloha/scripts/run_train.sh
+WZH_ROOT=<workspace-root> python experiments/act_aloha/scripts/parse_train_log.py
+WZH_ROOT=<workspace-root> bash experiments/act_aloha/scripts/run_eval.sh
+WZH_ROOT=<workspace-root> python experiments/act_aloha/scripts/parse_eval.py
+
+# 生成 MetaWorld 训练曲线与第二阶段验收报告
+python experiments/act_metaworld/scripts/plot_train_curves.py
+python experiments/phase2_acceptance/scripts/build_acceptance.py
+
+# ALOHA 数据集格式探查
+WZH_ROOT=<workspace-root> python experiments/aloha_probe/scripts/probe_aloha.py
+```
+
+各基线、消融与失败分析的完整复现命令见对应 `experiments/*/RESULTS.md`
+（[act_ablation](experiments/act_ablation/RESULTS.md)、
+[diffusion_inference_steps](experiments/diffusion_inference_steps/RESULTS.md)、
+[flow_vs_diffusion](experiments/flow_vs_diffusion/RESULTS.md)、
+[failure_modes](experiments/failure_modes/RESULTS.md)）。
+
+### 实验结果（跨环境）
+
+| 环境 | 引擎 | 算法 | Episodes | 成功率 | 来源 |
+|---|---|---|---:|---|---|
+| PushT-v0 | pymunk | BC v2 / ACT v3 / Diffusion / Flow | 50 | 10% / 14% / 6% / 2% | [结果主表](#结果)、[flow_baseline](experiments/flow_baseline/RESULTS.md) |
+| MetaWorld push-v3 | MuJoCo | ACT v1 / v2 | 20 | 0% / 0%（峰值奖励 0.513 / 0.477） | [act_metaworld](experiments/act_metaworld/RESULTS.md) |
+| ALOHA AlohaInsertion-v0 | MuJoCo | ACT（2000 步） | 5 | 0%（Wilson CI 0–43.4%） | [eval_summary](experiments/act_aloha/results/eval_summary.md) |
+
+> 跨环境成功率均为未收敛值，只用于证明链路可用，不作算法优劣排序；
+> 训练曲线见 [assets/loss_curves.png](assets/loss_curves.png)、
+> [assets/act_metaworld_train_curves.png](assets/act_metaworld_train_curves.png)、
+> [assets/act_aloha_loss.png](assets/act_aloha_loss.png)。
+
+### Demo 视频
+
+按算法分类的完整回放清单见 [Demo 回放](#demo-回放按算法分类)。跨环境可直接播放的 mp4：
+
+- ALOHA 双臂 rollout：[ep0（唯一非零奖励）](assets/act_aloha_eval_ep0.mp4)、[ep1（全零对照）](assets/act_aloha_eval_ep1.mp4)
+- MetaWorld 过拟合失效：[metaworld_v2_best.mp4](assets/metaworld_v2_best.mp4)
+- PushT 官方权重：[成功](assets/demo_success.mp4)、[失败](assets/demo_failure.mp4)
+- Flow 1 步最佳轨迹：[flow_1step_best.mp4](assets/flow_1step_best.mp4)
+
 ## Flow Matching 板块：核心差异与机器人场景价值
 
 > 一页讲清「流匹配和扩散到底差在哪、为什么机器人场景在意」。
@@ -186,6 +272,7 @@ BC 在此任务上的已知缺陷与对应改进路线（完整推导见 [docs/t
 
 ## 技术报告
 - [ACT 跨本体迁移到 ALOHA 双臂插入](docs/act_aloha_transfer.md)
+- 第二阶段验收对照（算法 × 环境覆盖矩阵、消融清单、README 自检）：[docs/phase2_acceptance.md](docs/phase2_acceptance.md)
 - Flow Matching 源码拆解与结构对照见 [docs/flow_notes.md](docs/flow_notes.md)
 
 完整结论汇总（基线对比、消融量化、失效模式分析）见 [docs/REPORT.md](docs/REPORT.md)；
